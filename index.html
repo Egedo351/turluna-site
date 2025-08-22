@@ -6,16 +6,44 @@
   <title>Turluna — About Us</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* language flags */
-    .lang-switch.flags { display:flex; gap:8px; align-items:center; margin-left:auto; }
-    .lang-btn {
-      width:28px; height:28px; border-radius:50%;
-      border:1px solid #dcdcdc; background:#fff;
-      font-size:16px; line-height:28px; cursor:pointer;
-      transition:transform .08s ease, box-shadow .08s ease;
+    /* language flags (full-bleed round buttons) */
+    .lang-switch.flags {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      margin-left: auto;               /* push flags to the right in nav */
     }
-    .lang-btn:hover { transform:translateY(-1px); }
-    .lang-btn.active { box-shadow:0 0 0 2px #111 inset; }
+    .lang-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1px solid #dcdcdc;
+      background-size: cover;          /* fill the whole circle */
+      background-position: center;
+      background-repeat: no-repeat;
+      cursor: pointer;
+      transition: transform .08s ease, box-shadow .08s ease;
+      padding: 0;
+    }
+    .lang-btn:hover { transform: translateY(-1px); }
+    .lang-btn.active { box-shadow: 0 0 0 2px #111 inset; }
+
+    /* Başlık stilleri */
+    h1 {
+      color: #006666;        /* About Us için özel renk */
+      font-family: "Georgia", serif;
+      font-size: 2.2em;
+    }
+    h2 {
+      margin-top: 1.5em;
+      font-size: 1.6em;
+    }
+    h3 {
+      margin-top: 1em;
+      font-size: 1.2em;
+      color: #555;           /* daha silik */
+      font-weight: normal;   /* kalın değil */
+    }
   </style>
 </head>
 <body>
@@ -29,11 +57,14 @@
       <a href="gastronomy.html">Gastronomy</a>
       <a href="sport.html">Sport</a>
 
-      <!-- Dil butonları -->
+      <!-- Language buttons -->
       <div class="lang-switch flags">
-        <button class="lang-btn" data-lang="en" onclick="egedoSetLang('en')" aria-label="English">🇬🇧</button>
-        <button class="lang-btn" data-lang="tr" onclick="egedoSetLang('tr')" aria-label="Türkçe">🇹🇷</button>
-        <button class="lang-btn" data-lang="pt" onclick="egedoSetLang('pt')" aria-label="Português">🇵🇹</button>
+        <button class="lang-btn" data-lang="en" onclick="egedoSetLang('en')"
+                aria-label="English" style="background-image:url('https://flagcdn.com/w40/gb.png');"></button>
+        <button class="lang-btn" data-lang="tr" onclick="egedoSetLang('tr')"
+                aria-label="Türkçe" style="background-image:url('https://flagcdn.com/w40/tr.png');"></button>
+        <button class="lang-btn" data-lang="pt" onclick="egedoSetLang('pt')"
+                aria-label="Português" style="background-image:url('https://flagcdn.com/w40/pt.png');"></button>
       </div>
     </nav>
   </div>
