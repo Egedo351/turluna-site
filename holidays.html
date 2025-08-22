@@ -3,49 +3,212 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Travels & Holidays — Egedo</title>
+  <title>Travels & Holidays — Turluna</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* flags (full-bleed round) */
+    .lang-switch.flags{display:flex;gap:8px;align-items:center;margin-left:auto}
+    .lang-btn{width:32px;height:32px;border-radius:50%;border:1px solid #dcdcdc;background-size:cover;background-position:center;background-repeat:no-repeat;cursor:pointer;transition:transform .08s,box-shadow .08s;padding:0}
+    .lang-btn:hover{transform:translateY(-1px)}
+    .lang-btn.active{box-shadow:0 0 0 2px #111 inset}
+
+    /* layout (same pattern as health) */
+    .page-wrap{max-width:1100px;margin:0 auto;padding:0 16px}
+    .page-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:32px;align-items:start}
+    .side-media{display:flex;flex-direction:column;gap:16px}
+    .hero-img{width:100%;border-radius:10px;display:block}
+
+    /* headings */
+    h1{color:#006666;font-family:"Georgia",serif;font-size:2.2em}
+    h2{margin-top:1.2em;font-size:1.4em}
+    h3{margin-top:.8em;font-size:1.15em}
+
+    /* form */
+    .contact-form{display:grid;gap:12px}
+    .contact-form label{display:grid;gap:6px;font-weight:600}
+    .contact-form input,.contact-form textarea,.contact-form select{
+      padding:10px;border:1px solid #ddd;border-radius:6px;font:inherit
+    }
+    .contact-form button{padding:10px 14px;border:none;border-radius:8px;background:#0b5;color:#fff;cursor:pointer}
+    .contact-status{margin-top:8px}
+    .hp-field{display:none}
+
+    /* responsive */
+    @media (max-width:900px){
+      .page-grid{grid-template-columns:1fr}
+      .side-media{order:1}
+      .main-content{order:2}
+    }
+  </style>
 </head>
 <body>
 <header>
   <div class="container">
     <nav>
-  <img src="logo.png.jpg" alt="Egedo logo" class="logo">
-  <a href="index.html" data-i18n="nav.about">About Us</a>
-  <a href="health.html" data-i18n="nav.health">Health</a>
-  <a href="holidays.html" data-i18n="nav.holidays">Travels & Holidays</a>
-  <a href="gastronomy.html" data-i18n="nav.gastronomy">Gastronomy</a>
-  <a href="sport.html" data-i18n="nav.sport">Sport</a>
+      <img src="logo.png.jpg" alt="Turluna logo" class="logo">
+      <a href="index.html">About Us</a>
+      <a href="health.html">Health</a>
+      <a href="holidays.html">Travels & Holidays</a>
+      <a href="gastronomy.html">Gastronomy</a>
+      <a href="sport.html">Sport</a>
 
-  <!-- Dil butonları -->
-  <span class="lang-switch" style="margin-left:12px; display:inline-flex; gap:8px;">
-    <button type="button" class="lang-btn" data-lang="en" onclick="egedoSetLang('en')">EN</button>
-    <button type="button" class="lang-btn" data-lang="tr" onclick="egedoSetLang('tr')">TR</button>
-  </span>
-</nav>
+      <!-- Language flags -->
+      <div class="lang-switch flags">
+        <button class="lang-btn" data-lang="en" onclick="egedoSetLang('en')" aria-label="English" style="background-image:url('https://flagcdn.com/w40/gb.png');"></button>
+        <button class="lang-btn" data-lang="tr" onclick="egedoSetLang('tr')" aria-label="Türkçe" style="background-image:url('https://flagcdn.com/w40/tr.png');"></button>
+        <button class="lang-btn" data-lang="pt" onclick="egedoSetLang('pt')" aria-label="Português" style="background-image:url('https://flagcdn.com/w40/pt.png');"></button>
+      </div>
+    </nav>
   </div>
 </header>
 
-<main>
-  <div class="hero">
-    <img src="img/leisure.png" alt="Travels and Holidays by Egedo" class="hero-img">
-  </div>
-
+<main class="page-wrap">
   <section class="section">
-    <h1>Travels & Holidays</h1>
-    <p>
-      Tailored holidays with hotels, flights and flexible extensions. Ask us about curated <strong>events and tours</strong>:
-      wine routes in <strong>Portugal</strong>, a <strong>Buckingham Palace</strong> area discovery in the UK, stadium visits in
-      <strong>France</strong>, or a scenic <strong>Bosphorus</strong> cruise in Istanbul—and much more.
-    </p>
+    <div class="page-grid">
+      <!-- LEFT: COPY -->
+      <div class="main-content">
+        <h1>Travels & Holidays</h1>
+
+        <p>
+          At <strong>Turluna</strong>, we design truly <strong>360-degree</strong> holidays. From <strong>accommodation</strong> and <strong>flights</strong> to
+          <strong>private transfers</strong>, <strong>travel insurance</strong>, <strong>visa support</strong> and curated add-ons, your journey is managed end-to-end.
+          During your trip, our <strong>24/7 customer care</strong> is one call away—so any disruption is handled quickly and your experience stays smooth.
+          We can enrich your plan with <strong>events</strong>, <strong>museum &amp; gallery entries</strong>, tastings and themed tours—always with trusted partners and clear itineraries.
+        </p>
+
+        <h3>All-in service, flexible by design</h3>
+        <p>
+          Need a short city escape or a multi-country route? We tailor the trip around your dates, budget and interests.
+          You get competitive rates, transparent planning and reliable support—so you only focus on enjoying the journey.
+        </p>
+      </div>
+
+      <!-- RIGHT: MEDIA + FORM -->
+      <aside class="side-media">
+        <img src="img/holidays.jpg" alt="Tailored holidays by Turluna" class="hero-img">
+
+        <div class="form-card">
+          <h2>Plan with Turluna</h2>
+          <p>Tell us what you’re looking for and we’ll design a seamless itinerary.</p>
+
+          <form id="contact-form" class="contact-form">
+            <label>
+              <span>Name</span>
+              <input type="text" name="name" required>
+            </label>
+            <label>
+              <span>Email</span>
+              <input type="email" name="email" required>
+            </label>
+
+            <!-- Type of Service -->
+            <label>
+              <span>Type of service</span>
+              <select name="service" required>
+                <option value="Accommodation" selected>Accommodation</option>
+                <option value="Transportation">Transportation (Flights/Trains/Buses)</option>
+                <option value="Transfer">Transfer (Private/Shared)</option>
+                <option value="Rent a Car">Rent a Car</option>
+                <option value="Museums & Galleries">Museums &amp; Galleries</option>
+                <option value="Events">Events</option>
+              </select>
+            </label>
+
+            <!-- Location with datalist (30 countries + Other) -->
+            <label>
+              <span>Location</span>
+              <input type="text" name="location" list="countries" placeholder="e.g., Portugal, UK, Türkiye" required>
+              <datalist id="countries">
+                <option>Portugal</option>
+                <option>United Kingdom</option>
+                <option>France</option>
+                <option>Spain</option>
+                <option>Italy</option>
+                <option>Germany</option>
+                <option>Greece</option>
+                <option>Türkiye</option>
+                <option>Switzerland</option>
+                <option>Austria</option>
+                <option>Czechia</option>
+                <option>Poland</option>
+                <option>Hungary</option>
+                <option>Croatia</option>
+                <option>Sweden</option>
+                <option>Norway</option>
+                <option>Finland</option>
+                <option>USA</option>
+                <option>Canada</option>
+                <option>Brazil</option>
+                <option>Argentina</option>
+                <option>Mexico</option>
+                <option>Morocco</option>
+                <option>Egypt</option>
+                <option>China</option>
+                <option>Japan</option>
+                <option>South Korea</option>
+                <option>Thailand</option>
+                <option>Indonesia</option>
+                <option>Australia</option>
+                <option>Other</option>
+              </datalist>
+            </label>
+
+            <label>
+              <span>Message</span>
+              <textarea name="message" rows="6" placeholder="Dates, number of guests, special interests…" required></textarea>
+            </label>
+
+            <input type="text" name="website" class="hp-field" autocomplete="off" tabindex="-1">
+            <button type="submit">Send</button>
+            <div id="contact-status" class="contact-status"></div>
+          </form>
+        </div>
+      </aside>
+    </div>
   </section>
 </main>
 
 <footer>
   <div class="container">
-    <small>© Egedo — All rights reserved.</small>
+    <small>© Turluna — All rights reserved.</small>
   </div>
 </footer>
+
+<script>
+  // Form submit: include service + location in the email
+  document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('contact-form');
+    const status = document.getElementById('contact-status');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      status.textContent = 'Sending...';
+
+      const fd = new FormData(form);
+      const payload = Object.fromEntries(fd.entries());
+      const service = payload.service || 'N/A';
+      const location = payload.location || 'N/A';
+      payload.message = `[Service: ${service}] [Location: ${location}]\n\n` + (payload.message || '');
+
+      try {
+        const res = await fetch('/api/contact', {
+          method: 'POST',
+          headers: {'Content-Type':'application/json'},
+          body: JSON.stringify(payload)
+        });
+        const data = await res.json();
+        if (res.ok && data.ok) {
+          status.textContent = '✓ Your message was sent. Thank you.';
+          form.reset();
+        } else {
+          status.textContent = '✗ Failed to send. Please try again.';
+        }
+      } catch (err) {
+        status.textContent = '✗ Network error.';
+      }
+    });
+  });
+</script>
 <script src="lang.js"></script>
 </body>
 </html>
