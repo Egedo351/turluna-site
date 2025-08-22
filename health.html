@@ -3,50 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Health Tourism — Turluna</title>
+  <title>About Us — Turluna</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* flags */
+    /* Flags (round, full-image buttons) */
     .lang-switch.flags{display:flex;gap:8px;align-items:center;margin-left:auto}
     .lang-btn{width:32px;height:32px;border-radius:50%;border:1px solid #dcdcdc;background-size:cover;background-position:center;background-repeat:no-repeat;cursor:pointer;transition:transform .08s,box-shadow .08s;padding:0}
     .lang-btn:hover{transform:translateY(-1px)}
     .lang-btn.active{box-shadow:0 0 0 2px #111 inset}
-
-    /* layout */
-    .health-wrap{max-width:1100px;margin:0 auto;padding:0 16px}
-    .health-grid{
-      display:grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap:32px;
-      align-items:start;
-    }
-    .health-media{display:flex;flex-direction:column;gap:16px}
-    .hero-img{width:100%;border-radius:10px;display:block}
-
-    /* headings */
-    h1{color:#006666;font-family:"Georgia",serif;font-size:2.2em}
-    h2{margin-top:1.2em;font-size:1.4em}
-    h3{margin-top:.8em;font-size:1.15em}
-
-    /* form */
-    .contact-form{display:grid;gap:12px}
-    .contact-form label{display:grid;gap:6px;font-weight:600}
-    .contact-form input,.contact-form textarea,.contact-form select{
-      padding:10px;border:1px solid #ddd;border-radius:6px;font:inherit
-    }
-    .contact-form button{padding:10px 14px;border:none;border-radius:8px;background:#0b5;color:#fff;cursor:pointer}
-    .contact-status{margin-top:8px}
-    .hp-field{display:none}
-
-    /* responsive */
-    @media (max-width: 900px){
-      .health-grid{
-        grid-template-columns: 1fr;
-      }
-      /* mobilde sıralama: foto -> form -> metin */
-      .health-media{order:1}
-      .health-content{order:2}
-    }
+    /* Long menu items -> two lines */
+    nav a.break{white-space:normal !important;display:inline-block;text-align:center;line-height:1.15;width:92px}
+    @media (max-width:900px){ nav a.break{width:auto} }
+    /* minor heading polish */
+    h1{color:#006666;font-family:"Georgia",serif}
   </style>
 </head>
 <body>
@@ -54,126 +23,58 @@
   <div class="container">
     <nav>
       <img src="logo.png.jpg" alt="Turluna logo" class="logo">
+
       <a href="index.html">About Us</a>
-      <a href="health.html">Health</a>
-      <a href="holidays.html">Travels & Holidays</a>
+      <a href="holidays.html" class="break">Plan<br>Your Travel</a>
+      <a href="health.html" class="break">Health<br>Tourism</a>
+      <a href="sport.html"  class="break">Sport<br>Tourism</a>
       <a href="gastronomy.html">Gastronomy</a>
-      <a href="sport.html">Sport</a>
 
       <div class="lang-switch flags">
-        <button class="lang-btn" data-lang="en" onclick="egedoSetLang('en')" aria-label="English" style="background-image:url('https://flagcdn.com/w40/gb.png');"></button>
-        <button class="lang-btn" data-lang="tr" onclick="egedoSetLang('tr')" aria-label="Türkçe" style="background-image:url('https://flagcdn.com/w40/tr.png');"></button>
+        <button class="lang-btn" data-lang="en" onclick="egedoSetLang('en')" aria-label="English"   style="background-image:url('https://flagcdn.com/w40/gb.png');"></button>
+        <button class="lang-btn" data-lang="tr" onclick="egedoSetLang('tr')" aria-label="Türkçe"    style="background-image:url('https://flagcdn.com/w40/tr.png');"></button>
         <button class="lang-btn" data-lang="pt" onclick="egedoSetLang('pt')" aria-label="Português" style="background-image:url('https://flagcdn.com/w40/pt.png');"></button>
       </div>
     </nav>
   </div>
 </header>
 
-<main class="health-wrap">
+<main>
   <section class="section">
-    <div class="health-grid">
-      <!-- LEFT: TEXT -->
-      <div class="health-content">
-        <h1>Health Tourism</h1>
-        <p>
-          With trusted medical partners and attentive trip planning, we design health-focused journeys that combine excellent care with a smooth travel experience.
-        </p>
+    <h1>About Us</h1>
 
-        <h3>Hair Transplant</h3>
-        <p>
-          We work with expert partner clinics across <strong>Istanbul, Antalya, and Bursa</strong> for hair transplantation. You receive a personalized plan, experienced medical teams, hygienic facilities, and transparent aftercare—delivered at international standards.
-        </p>
+    <p><strong>Turluna Lda.</strong> is a Lisbon-based company founded by two Turkish entrepreneurs. With an
+      innovative mindset, we work only with the best partners in every field we serve—keeping customer satisfaction
+      consistently at the highest level. Our core lines of business are <strong>tourism</strong>,
+      <strong>gastronomy</strong>, and <strong>consultancy</strong>.</p>
 
-        <h3>Orthodontics &amp; Smile Design</h3>
-        <p>
-          For orthodontic treatments and smile design, our clinic partners in <strong>Istanbul</strong> offer comprehensive diagnosis, treatment planning, and aesthetics-driven restorations. From aligners to advanced cosmetic dentistry, your dental journey is managed end-to-end.
-        </p>
+    <h2>Tourism</h2>
+    <p>Turluna delivers a true <strong>360-degree</strong> travel service. From <strong>air tickets</strong>,
+      <strong>hotel stays</strong>, <strong>car rental</strong>, and <strong>private transfers</strong> to
+      <strong>event tickets</strong> and <strong>museum/gallery admissions</strong>, we curate seamless journeys
+      end-to-end. You receive competitive rates, attentive support, and premium quality—so your trip feels effortless
+      from the very first plan to the final day.</p>
 
-        <h3>Physiotherapy</h3>
-        <p>
-          For physiotherapy, we provide a calm setting away from city intensity: <strong>Ayvalık</strong>. Here you can receive one-to-one therapy immersed in nature—close to the sea—while following a program tailored to your recovery and mobility goals.
-        </p>
-      </div>
+    <h3>Health &amp; Sports Tourism</h3>
+    <p>We also design packages in <strong>health</strong> and <strong>sports</strong> tourism.</p>
 
-      <!-- RIGHT: IMAGE + FORM -->
-      <aside class="health-media">
-        <img src="img/health.png" alt="Health Tourism with Turluna" class="hero-img">
+    <h2>Gastronomy</h2>
+    <p>We proudly showcase the rich flavors of Turkish cuisine through pop-up events at unique venues in Lisbon.
+      From traditional breakfasts to refined dinners, we bring authentic taste with modern touches.</p>
 
-        <div class="form-card">
-          <h2>Contact Us</h2>
-          <p>Send us a message—tell us what you need—and we will get back to you shortly.</p>
-
-          <form id="contact-form" class="contact-form">
-            <label>
-              <span>Name</span>
-              <input type="text" name="name" required>
-            </label>
-            <label>
-              <span>Email</span>
-              <input type="email" name="email" required>
-            </label>
-            <label>
-              <span>Service</span>
-              <select name="service" required>
-                <option value="Hair Transplant" selected>Hair Transplant</option>
-                <option value="Orthodontics">Orthodontic Treatment / Smile Design</option>
-                <option value="Physiotherapy">Physiotherapy</option>
-              </select>
-            </label>
-            <label>
-              <span>Message</span>
-              <textarea name="message" rows="6" placeholder="Tell us briefly about your case or dates…" required></textarea>
-            </label>
-            <input type="text" name="website" class="hp-field" autocomplete="off" tabindex="-1">
-            <button type="submit">Send</button>
-            <div id="contact-status" class="contact-status"></div>
-          </form>
-        </div>
-      </aside>
-    </div>
+    <h2>Consultancy</h2>
+    <p>We provide practical guidance on Portugal visas and company formation in Portugal. Whether you need help
+      understanding the steps, preparing documents, or coordinating with local partners, our team can assist you
+      from start to finish.</p>
   </section>
 </main>
 
 <footer>
   <div class="container">
-    <small>© Turluna — All rights reserved.</small>
+    <small>© Turluna 2025 — All rights reserved.</small>
   </div>
 </footer>
 
-<script>
-  // form submit
-  document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('contact-form');
-    const status = document.getElementById('contact-status');
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      status.textContent = 'Sending...';
-
-      const fd = new FormData(form);
-      const payload = Object.fromEntries(fd.entries());
-      const service = payload.service || 'N/A';
-      payload.message = `[Service: ${service}]\n\n` + (payload.message || '');
-
-      try {
-        const res = await fetch('/api/contact', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload)
-        });
-        const data = await res.json();
-        if (res.ok && data.ok) {
-          status.textContent = '✓ Your message was sent. Thank you.';
-          form.reset();
-        } else {
-          status.textContent = '✗ Failed to send. Please try again.';
-        }
-      } catch (err) {
-        status.textContent = '✗ Network error.';
-      }
-    });
-  });
-</script>
 <script src="lang.js"></script>
 </body>
 </html>
