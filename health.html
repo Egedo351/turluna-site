@@ -6,37 +6,47 @@
   <title>Health Tourism — Turluna</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    .lang-switch.flags {
-      display: flex;
-      gap: 8px;
-      align-items: center;
-      margin-left: auto;
-    }
-    .lang-btn {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      border: 1px solid #dcdcdc;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      cursor: pointer;
-      transition: transform .08s ease, box-shadow .08s ease;
-      padding: 0;
-    }
-    .lang-btn:hover { transform: translateY(-1px); }
-    .lang-btn.active { box-shadow: 0 0 0 2px #111 inset; }
+    /* flags */
+    .lang-switch.flags{display:flex;gap:8px;align-items:center;margin-left:auto}
+    .lang-btn{width:32px;height:32px;border-radius:50%;border:1px solid #dcdcdc;background-size:cover;background-position:center;background-repeat:no-repeat;cursor:pointer;transition:transform .08s,box-shadow .08s;padding:0}
+    .lang-btn:hover{transform:translateY(-1px)}
+    .lang-btn.active{box-shadow:0 0 0 2px #111 inset}
 
-    .contact-form { display:grid; gap:12px; max-width:520px; margin-top:16px; }
-    .contact-form label { display:grid; gap:6px; font-weight:600; }
-    .contact-form input, .contact-form textarea, .contact-form select {
-      padding:10px; border:1px solid #ddd; border-radius:6px; font:inherit;
+    /* layout */
+    .health-wrap{max-width:1100px;margin:0 auto;padding:0 16px}
+    .health-grid{
+      display:grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap:32px;
+      align-items:start;
     }
-    .contact-form button {
-      padding:10px 14px; border:none; border-radius:8px; background:#0b5; color:#fff; cursor:pointer;
+    .health-media{display:flex;flex-direction:column;gap:16px}
+    .hero-img{width:100%;border-radius:10px;display:block}
+
+    /* headings */
+    h1{color:#006666;font-family:"Georgia",serif;font-size:2.2em}
+    h2{margin-top:1.2em;font-size:1.4em}
+    h3{margin-top:.8em;font-size:1.15em}
+
+    /* form */
+    .contact-form{display:grid;gap:12px}
+    .contact-form label{display:grid;gap:6px;font-weight:600}
+    .contact-form input,.contact-form textarea,.contact-form select{
+      padding:10px;border:1px solid #ddd;border-radius:6px;font:inherit
     }
-    .contact-status { margin-top:8px; }
-    .hp-field { display:none; }
+    .contact-form button{padding:10px 14px;border:none;border-radius:8px;background:#0b5;color:#fff;cursor:pointer}
+    .contact-status{margin-top:8px}
+    .hp-field{display:none}
+
+    /* responsive */
+    @media (max-width: 900px){
+      .health-grid{
+        grid-template-columns: 1fr;
+      }
+      /* mobilde sıralama: foto -> form -> metin */
+      .health-media{order:1}
+      .health-content{order:2}
+    }
   </style>
 </head>
 <body>
@@ -51,72 +61,76 @@
       <a href="sport.html">Sport</a>
 
       <div class="lang-switch flags">
-        <button class="lang-btn" data-lang="en" onclick="egedoSetLang('en')"
-                aria-label="English" style="background-image:url('https://flagcdn.com/w40/gb.png');"></button>
-        <button class="lang-btn" data-lang="tr" onclick="egedoSetLang('tr')"
-                aria-label="Türkçe" style="background-image:url('https://flagcdn.com/w40/tr.png');"></button>
-        <button class="lang-btn" data-lang="pt" onclick="egedoSetLang('pt')"
-                aria-label="Português" style="background-image:url('https://flagcdn.com/w40/pt.png');"></button>
+        <button class="lang-btn" data-lang="en" onclick="egedoSetLang('en')" aria-label="English" style="background-image:url('https://flagcdn.com/w40/gb.png');"></button>
+        <button class="lang-btn" data-lang="tr" onclick="egedoSetLang('tr')" aria-label="Türkçe" style="background-image:url('https://flagcdn.com/w40/tr.png');"></button>
+        <button class="lang-btn" data-lang="pt" onclick="egedoSetLang('pt')" aria-label="Português" style="background-image:url('https://flagcdn.com/w40/pt.png');"></button>
       </div>
     </nav>
   </div>
 </header>
 
-<main>
-  <div class="hero">
-    <img src="img/health.png" alt="Health Tourism with Turluna" class="hero-img">
-  </div>
-
+<main class="health-wrap">
   <section class="section">
-    <h1>Health Tourism</h1>
+    <div class="health-grid">
+      <!-- LEFT: TEXT -->
+      <div class="health-content">
+        <h1>Health Tourism</h1>
+        <p>
+          With trusted medical partners and attentive trip planning, we design health-focused journeys that combine excellent care with a smooth travel experience.
+        </p>
 
-    <p>
-      With trusted medical partners and attentive trip planning, we design health-focused journeys that combine excellent care with a smooth travel experience.
-    </p>
+        <h3>Hair Transplant</h3>
+        <p>
+          We work with expert partner clinics across <strong>Istanbul, Antalya, and Bursa</strong> for hair transplantation. You receive a personalized plan, experienced medical teams, hygienic facilities, and transparent aftercare—delivered at international standards.
+        </p>
 
-    <h3>Hair Transplant</h3>
-    <p>
-      We work with expert partner clinics across <strong>Istanbul, Antalya, and Bursa</strong> for hair transplantation. You receive a personalized plan, experienced medical teams, hygienic facilities, and transparent aftercare—delivered at international standards.
-    </p>
+        <h3>Orthodontics &amp; Smile Design</h3>
+        <p>
+          For orthodontic treatments and smile design, our clinic partners in <strong>Istanbul</strong> offer comprehensive diagnosis, treatment planning, and aesthetics-driven restorations. From aligners to advanced cosmetic dentistry, your dental journey is managed end-to-end.
+        </p>
 
-    <h3>Orthodontics &amp; Smile Design</h3>
-    <p>
-      For orthodontic treatments and smile design, our clinic partners in <strong>Istanbul</strong> offer comprehensive diagnosis, treatment planning, and aesthetics-driven restorations. From aligners to advanced cosmetic dentistry, your dental journey is managed end-to-end.
-    </p>
+        <h3>Physiotherapy</h3>
+        <p>
+          For physiotherapy, we provide a calm setting away from city intensity: <strong>Ayvalık</strong>. Here you can receive one-to-one therapy immersed in nature—close to the sea—while following a program tailored to your recovery and mobility goals.
+        </p>
+      </div>
 
-    <h3>Physiotherapy</h3>
-    <p>
-      For physiotherapy, we provide a calm setting away from city intensity: <strong>Ayvalık</strong>. Here you can receive one-to-one therapy immersed in nature—close to the sea—while following a program tailored to your recovery and mobility goals.
-    </p>
+      <!-- RIGHT: IMAGE + FORM -->
+      <aside class="health-media">
+        <img src="img/health.png" alt="Health Tourism with Turluna" class="hero-img">
 
-    <h2 style="margin-top:28px;">Contact Us</h2>
-    <p>Send us a message—tell us what you need—and we will get back to you shortly.</p>
+        <div class="form-card">
+          <h2>Contact Us</h2>
+          <p>Send us a message—tell us what you need—and we will get back to you shortly.</p>
 
-    <form id="contact-form" class="contact-form">
-      <label>
-        <span>Name</span>
-        <input type="text" name="name" required>
-      </label>
-      <label>
-        <span>Email</span>
-        <input type="email" name="email" required>
-      </label>
-      <label>
-        <span>Service</span>
-        <select name="service" required>
-          <option value="Hair Transplant" selected>Hair Transplant</option>
-          <option value="Orthodontics">Orthodontic Treatment / Smile Design</option>
-          <option value="Physiotherapy">Physiotherapy</option>
-        </select>
-      </label>
-      <label>
-        <span>Message</span>
-        <textarea name="message" rows="6" placeholder="Tell us briefly about your case or dates…" required></textarea>
-      </label>
-      <input type="text" name="website" class="hp-field" autocomplete="off" tabindex="-1">
-      <button type="submit">Send</button>
-      <div id="contact-status" class="contact-status"></div>
-    </form>
+          <form id="contact-form" class="contact-form">
+            <label>
+              <span>Name</span>
+              <input type="text" name="name" required>
+            </label>
+            <label>
+              <span>Email</span>
+              <input type="email" name="email" required>
+            </label>
+            <label>
+              <span>Service</span>
+              <select name="service" required>
+                <option value="Hair Transplant" selected>Hair Transplant</option>
+                <option value="Orthodontics">Orthodontic Treatment / Smile Design</option>
+                <option value="Physiotherapy">Physiotherapy</option>
+              </select>
+            </label>
+            <label>
+              <span>Message</span>
+              <textarea name="message" rows="6" placeholder="Tell us briefly about your case or dates…" required></textarea>
+            </label>
+            <input type="text" name="website" class="hp-field" autocomplete="off" tabindex="-1">
+            <button type="submit">Send</button>
+            <div id="contact-status" class="contact-status"></div>
+          </form>
+        </div>
+      </aside>
+    </div>
   </section>
 </main>
 
@@ -127,6 +141,7 @@
 </footer>
 
 <script>
+  // form submit
   document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('contact-form');
     const status = document.getElementById('contact-status');
