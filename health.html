@@ -3,74 +3,128 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Health Tourism — Egedo</title>
+  <title>Health Tourism — Turluna</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* küçük form stilleri – başka dosyaya dokunmamak için burada */
+    /* language flags (full-bleed round buttons) */
+    .lang-switch.flags {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      margin-left: auto;
+    }
+    .lang-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1px solid #dcdcdc;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      cursor: pointer;
+      transition: transform .08s ease, box-shadow .08s ease;
+      padding: 0;
+    }
+    .lang-btn:hover { transform: translateY(-1px); }
+    .lang-btn.active { box-shadow: 0 0 0 2px #111 inset; }
+
+    /* Small form helpers */
     .contact-form { display:grid; gap:12px; max-width:520px; margin-top:16px; }
     .contact-form label { display:grid; gap:6px; font-weight:600; }
-    .contact-form input, .contact-form textarea {
+    .contact-form input, .contact-form textarea, .contact-form select {
       padding:10px; border:1px solid #ddd; border-radius:6px; font:inherit;
     }
     .contact-form button {
       padding:10px 14px; border:none; border-radius:8px; background:#0b5; color:#fff; cursor:pointer;
     }
     .contact-status { margin-top:8px; }
-    .hp-field { display:none; } /* honeypot */
+    .hp-field { display:none; }
   </style>
 </head>
 <body>
 <header>
   <div class="container">
     <nav>
-      <img src="logo.png.jpg" alt="Egedo logo" class="logo">
-      <a href="index.html" data-i18n="nav.about">About Us</a>
-      <a href="health.html" data-i18n="nav.health">Health</a>
-      <a href="holidays.html" data-i18n="nav.holidays">Travels & Holidays</a>
-      <a href="gastronomy.html" data-i18n="nav.gastronomy">Gastronomy</a>
-      <a href="sport.html" data-i18n="nav.sport">Sport</a>
+      <img src="logo.png.jpg" alt="Turluna logo" class="logo">
+      <a href="index.html">About Us</a>
+      <a href="health.html">Health</a>
+      <a href="holidays.html">Travels & Holidays</a>
+      <a href="gastronomy.html">Gastronomy</a>
+      <a href="sport.html">Sport</a>
 
-      <!-- Dil butonları -->
-      <span class="lang-switch" style="margin-left:12px; display:inline-flex; gap:8px;">
-        <button type="button" class="lang-btn" data-lang="en" onclick="egedoSetLang('en')">EN</button>
-        <button type="button" class="lang-btn" data-lang="tr" onclick="egedoSetLang('tr')">TR</button>
-      </span>
+      <!-- Language buttons -->
+      <div class="lang-switch flags">
+        <button class="lang-btn" data-lang="en" onclick="egedoSetLang('en')"
+                aria-label="English" style="background-image:url('https://flagcdn.com/w40/gb.png');"></button>
+        <button class="lang-btn" data-lang="tr" onclick="egedoSetLang('tr')"
+                aria-label="Türkçe" style="background-image:url('https://flagcdn.com/w40/tr.png');"></button>
+        <button class="lang-btn" data-lang="pt" onclick="egedoSetLang('pt')"
+                aria-label="Português" style="background-image:url('https://flagcdn.com/w40/pt.png');"></button>
+      </div>
     </nav>
   </div>
 </header>
 
 <main>
   <div class="hero">
-    <img src="img/health.png" alt="Health Tourism with Egedo" class="hero-img">
+    <img src="img/health.png" alt="Health Tourism with Turluna" class="hero-img">
   </div>
 
   <section class="section">
-    <h1 data-i18n="health.title">Health Tourism</h1>
-    <p data-i18n="health.lead">
-      We connect you with trusted clinics and experienced doctors for a smooth, well-organized journey—from travel planning
-      to on-site assistance and follow-up. Our network focuses on quality, safety, and transparent communication.
+    <h1>Health Tourism</h1>
+
+    <p>
+      With trusted medical partners and attentive trip planning, we design health-focused journeys that combine excellent care with a smooth travel experience.
+    </p>
+
+    <h2>Hair Transplant — İstanbul · Antalya · Bursa</h2>
+    <p>
+      For <strong>hair transplantation</strong>, we work with expert partner clinics across <strong>Istanbul, Antalya, and Bursa</strong>. You receive a personalized plan, experienced medical teams, hygienic facilities, and transparent aftercare—delivered at international standards.
+    </p>
+
+    <h2>Orthodontics &amp; Smile Design — İstanbul</h2>
+    <p>
+      For <strong>orthodontic treatments</strong> and <strong>smile design</strong>, our clinic partners in <strong>Istanbul</strong> offer comprehensive diagnosis, treatment planning, and aesthetics-driven restorations. From aligners to advanced cosmetic dentistry, your dental journey is managed end-to-end.
+    </p>
+
+    <h2>Physiotherapy — Ayvalık (Nature &amp; Sea)</h2>
+    <p>
+      For <strong>physiotherapy</strong>, we provide a calm setting away from city intensity: <strong>Ayvalık</strong>. Here you can receive one-to-one therapy immersed in nature—close to the sea—while following a program tailored to your recovery and mobility goals.
     </p>
 
     <!-- CONTACT FORM -->
-    <h2 data-i18n="contact.title" style="margin-top:28px;">Contact Us</h2>
-    <p data-i18n="contact.desc">Send us a message and we will get back to you shortly.</p>
+    <h2 style="margin-top:28px;">Contact Us</h2>
+    <p>Send us a message—tell us what you need—and we will get back to you shortly.</p>
 
     <form id="contact-form" class="contact-form">
       <label>
-        <span data-i18n="contact.name">Name</span>
+        <span>Name</span>
         <input type="text" name="name" required>
       </label>
       <label>
-        <span data-i18n="contact.email">Email</span>
+        <span>Email</span>
         <input type="email" name="email" required>
       </label>
+
+      <!-- NEW: service selector -->
       <label>
-        <span data-i18n="contact.message">Message</span>
-        <textarea name="message" rows="6" required></textarea>
+        <span>Service</span>
+        <select name="service" required>
+          <option value="Hair Transplant" selected>Hair Transplant</option>
+          <option value="Orthodontics">Orthodontic Treatment / Smile Design</option>
+          <option value="Physiotherapy">Physiotherapy</option>
+        </select>
       </label>
-      <!-- spam için gizli alan (honeypot) -->
+
+      <label>
+        <span>Message</span>
+        <textarea name="message" rows="6" placeholder="Tell us briefly about your case or dates…" required></textarea>
+      </label>
+
+      <!-- spam honeypot -->
       <input type="text" name="website" class="hp-field" autocomplete="off" tabindex="-1">
-      <button type="submit" data-i18n="contact.send">Send</button>
+
+      <button type="submit">Send</button>
       <div id="contact-status" class="contact-status"></div>
     </form>
   </section>
@@ -78,24 +132,26 @@
 
 <footer>
   <div class="container">
-    <small>© Egedo — All rights reserved.</small>
+    <small>© Turluna — All rights reserved.</small>
   </div>
 </footer>
 
 <script>
-  // form submit
+  // Form submit — prepend selected service into message; backend doesn't need changes
   document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('contact-form');
     const status = document.getElementById('contact-status');
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
-      status.textContent = (document.documentElement.lang === 'tr')
-        ? 'Gönderiliyor...'
-        : 'Sending...';
+      status.textContent = 'Sending...';
 
       const fd = new FormData(form);
       const payload = Object.fromEntries(fd.entries());
+
+      // Combine service + message so email includes both
+      const service = payload.service || 'N/A';
+      payload.message = `[Service: ${service}]\n\n` + (payload.message || '');
 
       try {
         const res = await fetch('/api/contact', {
@@ -105,19 +161,13 @@
         });
         const data = await res.json();
         if (res.ok && data.ok) {
-          status.textContent = (document.documentElement.lang === 'tr')
-            ? '✓ Mesajınız gönderildi. Teşekkürler.'
-            : '✓ Your message was sent. Thank you.';
+          status.textContent = '✓ Your message was sent. Thank you.';
           form.reset();
         } else {
-          status.textContent = (document.documentElement.lang === 'tr')
-            ? '✗ Gönderilemedi. Lütfen tekrar deneyin.'
-            : '✗ Failed to send. Please try again.';
+          status.textContent = '✗ Failed to send. Please try again.';
         }
       } catch (err) {
-        status.textContent = (document.documentElement.lang === 'tr')
-          ? '✗ Ağ hatası.'
-          : '✗ Network error.';
+        status.textContent = '✗ Network error.';
       }
     });
   });
