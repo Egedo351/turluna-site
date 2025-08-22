@@ -6,24 +6,36 @@
   <title>Travels & Holidays — Turluna</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* flags (full-bleed round) */
+    /* Flags (full-bleed round) */
     .lang-switch.flags{display:flex;gap:8px;align-items:center;margin-left:auto}
     .lang-btn{width:32px;height:32px;border-radius:50%;border:1px solid #dcdcdc;background-size:cover;background-position:center;background-repeat:no-repeat;cursor:pointer;transition:transform .08s,box-shadow .08s;padding:0}
     .lang-btn:hover{transform:translateY(-1px)}
     .lang-btn.active{box-shadow:0 0 0 2px #111 inset}
 
-    /* layout (same pattern as health) */
+    /* Long menu items: break into two lines */
+    nav a.break{
+      white-space: normal !important;
+      display: inline-block;
+      text-align: center;
+      line-height: 1.15;
+      width: 92px;
+    }
+    @media (max-width: 900px){
+      nav a.break{ width:auto; }
+    }
+
+    /* Layout (same as health) */
     .page-wrap{max-width:1100px;margin:0 auto;padding:0 16px}
     .page-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:32px;align-items:start}
     .side-media{display:flex;flex-direction:column;gap:16px}
     .hero-img{width:100%;border-radius:10px;display:block}
 
-    /* headings */
+    /* Headings */
     h1{color:#006666;font-family:"Georgia",serif;font-size:2.2em}
     h2{margin-top:1.2em;font-size:1.4em}
     h3{margin-top:.8em;font-size:1.15em}
 
-    /* form */
+    /* Form */
     .contact-form{display:grid;gap:12px}
     .contact-form label{display:grid;gap:6px;font-weight:600}
     .contact-form input,.contact-form textarea,.contact-form select{
@@ -33,7 +45,7 @@
     .contact-status{margin-top:8px}
     .hp-field{display:none}
 
-    /* responsive */
+    /* Responsive */
     @media (max-width:900px){
       .page-grid{grid-template-columns:1fr}
       .side-media{order:1}
@@ -46,16 +58,16 @@
   <div class="container">
     <nav>
       <img src="logo.png.jpg" alt="Turluna logo" class="logo">
-      <a href="index.html">About Us</a>
-      <a href="health.html">Health</a>
-      <a href="holidays.html">Travels & Holidays</a>
-      <a href="gastronomy.html">Gastronomy</a>
-      <a href="sport.html">Sport</a>
 
-      <!-- Language flags -->
+      <a href="index.html">About Us</a>
+      <a href="holidays.html">Travels & Holidays</a>
+      <a href="health.html" class="break">Health<br>Tourism</a>
+      <a href="sport.html"  class="break">Sport<br>Tourism</a>
+      <a href="gastronomy.html">Gastronomy</a>
+
       <div class="lang-switch flags">
-        <button class="lang-btn" data-lang="en" onclick="egedoSetLang('en')" aria-label="English" style="background-image:url('https://flagcdn.com/w40/gb.png');"></button>
-        <button class="lang-btn" data-lang="tr" onclick="egedoSetLang('tr')" aria-label="Türkçe" style="background-image:url('https://flagcdn.com/w40/tr.png');"></button>
+        <button class="lang-btn" data-lang="en" onclick="egedoSetLang('en')" aria-label="English"   style="background-image:url('https://flagcdn.com/w40/gb.png');"></button>
+        <button class="lang-btn" data-lang="tr" onclick="egedoSetLang('tr')" aria-label="Türkçe"    style="background-image:url('https://flagcdn.com/w40/tr.png');"></button>
         <button class="lang-btn" data-lang="pt" onclick="egedoSetLang('pt')" aria-label="Português" style="background-image:url('https://flagcdn.com/w40/pt.png');"></button>
       </div>
     </nav>
@@ -170,7 +182,7 @@
 
 <footer>
   <div class="container">
-    <small>© Turluna — All rights reserved.</small>
+    <small>© Turluna 2025 — All rights reserved.</small>
   </div>
 </footer>
 
@@ -186,7 +198,7 @@
 
       const fd = new FormData(form);
       const payload = Object.fromEntries(fd.entries());
-      const service = payload.service || 'N/A';
+      const service  = payload.service  || 'N/A';
       const location = payload.location || 'N/A';
       payload.message = `[Service: ${service}] [Location: ${location}]\n\n` + (payload.message || '');
 
