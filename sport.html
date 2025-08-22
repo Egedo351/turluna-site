@@ -3,48 +3,182 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sport — Egedo</title>
+  <title>Sport Tourism — Turluna</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Flags (full-bleed round) */
+    .lang-switch.flags{display:flex;gap:8px;align-items:center;margin-left:auto}
+    .lang-btn{width:32px;height:32px;border-radius:50%;border:1px solid #dcdcdc;background-size:cover;background-position:center;background-repeat:no-repeat;cursor:pointer;transition:transform .08s,box-shadow .08s;padding:0}
+    .lang-btn:hover{transform:translateY(-1px)}
+    .lang-btn.active{box-shadow:0 0 0 2px #111 inset}
+
+    /* Long menu items: break into two lines */
+    nav a.break{
+      white-space: normal !important;
+      display: inline-block;
+      text-align: center;
+      line-height: 1.15;
+      width: 92px;
+    }
+    @media (max-width: 900px){
+      nav a.break{ width:auto; }
+    }
+
+    /* Layout (sayfalarla aynı) */
+    .page-wrap{max-width:1100px;margin:0 auto;padding:0 16px}
+    .page-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:32px;align-items:start}
+    .side-media{display:flex;flex-direction:column;gap:16px}
+    .hero-img{width:100%;border-radius:10px;display:block}
+
+    /* Headings */
+    h1{color:#006666;font-family:"Georgia",serif;font-size:2.2em}
+    h2{margin-top:1.2em;font-size:1.4em}
+    h3{margin-top:.8em;font-size:1.15em}
+
+    /* Form */
+    .contact-form{display:grid;gap:12px}
+    .contact-form label{display:grid;gap:6px;font-weight:600}
+    .contact-form input,.contact-form textarea,.contact-form select{
+      padding:10px;border:1px solid #ddd;border-radius:6px;font:inherit
+    }
+    .contact-form button{padding:10px 14px;border:none;border-radius:8px;background:#0b5;color:#fff;cursor:pointer}
+    .contact-status{margin-top:8px}
+    .hp-field{display:none}
+
+    /* Responsive */
+    @media (max-width:900px){
+      .page-grid{grid-template-columns:1fr}
+      .side-media{order:1}
+      .main-content{order:2}
+    }
+  </style>
 </head>
 <body>
 <header>
   <div class="container">
-   <nav>
-  <img src="logo.png.jpg" alt="Egedo logo" class="logo">
-  <a href="index.html" data-i18n="nav.about">About Us</a>
-  <a href="health.html" data-i18n="nav.health">Health</a>
-  <a href="holidays.html" data-i18n="nav.holidays">Travels & Holidays</a>
-  <a href="gastronomy.html" data-i18n="nav.gastronomy">Gastronomy</a>
-  <a href="sport.html" data-i18n="nav.sport">Sport</a>
+    <nav>
+      <img src="logo.png.jpg" alt="Turluna logo" class="logo">
 
-  <!-- Dil butonları -->
-  <span class="lang-switch" style="margin-left:12px; display:inline-flex; gap:8px;">
-    <button type="button" class="lang-btn" data-lang="en" onclick="egedoSetLang('en')">EN</button>
-    <button type="button" class="lang-btn" data-lang="tr" onclick="egedoSetLang('tr')">TR</button>
-  </span>
-</nav>
+      <a href="index.html">About Us</a>
+      <a href="holidays.html" class="break">Plan<br>Your Travel</a>
+      <a href="health.html" class="break">Health<br>Tourism</a>
+      <a href="sport.html"  class="break">Sport<br>Tourism</a>
+      <a href="gastronomy.html">Gastronomy</a>
+
+      <div class="lang-switch flags">
+        <button class="lang-btn" data-lang="en" onclick="egedoSetLang('en')" aria-label="English"   style="background-image:url('https://flagcdn.com/w40/gb.png');"></button>
+        <button class="lang-btn" data-lang="tr" onclick="egedoSetLang('tr')" aria-label="Türkçe"    style="background-image:url('https://flagcdn.com/w40/tr.png');"></button>
+        <button class="lang-btn" data-lang="pt" onclick="egedoSetLang('pt')" aria-label="Português" style="background-image:url('https://flagcdn.com/w40/pt.png');"></button>
+      </div>
+    </nav>
   </div>
 </header>
 
-<main>
-  <div class="hero">
-    <img src="img/sport.png" alt="Sports Camps and Events by Egedo" class="hero-img">
-  </div>
-
+<main class="page-wrap">
   <section class="section">
-    <h1>Sport</h1>
-    <p>
-      We organize customized training camps and friendly tournaments. Dedicated logistics, facilities matching your sport,
-      and full local coordination—so your team can focus on performance.
-    </p>
+    <div class="page-grid">
+      <!-- LEFT: COPY -->
+      <div class="main-content">
+        <h1>Sport Tourism</h1>
+
+        <p><strong>Turluna</strong> olarak sporla turizmin birlikte anılmasından keyif alıyoruz. Futbol ve basketbol başta olmak üzere
+          birçok branşta, Türkiye ve Portekiz’de harika konumlarda takımlara <strong>kamp imkânları</strong> sunuyoruz.
+          Hazırlık maçları ve turnuvalar, sosyal ve eğitsel aktivitelerle zenginleştirilmiş, her seviyeye uygun ve
+          <strong>tüm mevsimlerde</strong> planlanabilen programlar tasarlıyoruz. Tüm lojistik, tesis ve yerel koordinasyonu biz yönetiyoruz—
+          böylece takımınız sadece performansa odaklanıyor.</p>
+
+        <h3>All-in service for teams</h3>
+        <p>Seçtiğiniz spor dalına uygun tesisler, ulaşım ve konaklama, saha saatleri, antrenman ekipmanları ve
+          sağlık desteği dahil uçtan uca planlama yapıyoruz. İsterseniz maç/turnuva organizasyonu, video-analiz,
+          beslenme danışmanlığı ve kültürel gezilerle programı zenginleştiriyoruz.</p>
+      </div>
+
+      <!-- RIGHT: MEDIA + FORM -->
+      <aside class="side-media">
+        <img src="img/sport.png" alt="Team training camps by Turluna" class="hero-img">
+
+        <div class="form-card">
+          <h2>Plan the camp for your team</h2>
+          <p>Takımınız için ihtiyaca uygun kamp planını oluşturalım.</p>
+
+          <form id="contact-form" class="contact-form">
+            <label>
+              <span>Name</span>
+              <input type="text" name="name" required>
+            </label>
+            <label>
+              <span>Email</span>
+              <input type="email" name="email" required>
+            </label>
+
+            <!-- Sports branch -->
+            <label>
+              <span>Sport branch</span>
+              <select name="service" required>
+                <option value="Football" selected>Football</option>
+                <option value="Basketball">Basketball</option>
+                <option value="Volleyball">Volleyball</option>
+                <option value="Other">Other</option>
+              </select>
+            </label>
+
+            <label>
+              <span>Message</span>
+              <textarea name="message" rows="6" placeholder="Dates, team category, number of people, desired services…" required></textarea>
+            </label>
+
+            <!-- Honey-pot -->
+            <input type="text" name="website" class="hp-field" autocomplete="off" tabindex="-1">
+            <button type="submit">Send</button>
+            <div id="contact-status" class="contact-status"></div>
+          </form>
+        </div>
+      </aside>
+    </div>
   </section>
 </main>
 
 <footer>
   <div class="container">
-    <small>© Egedo — All rights reserved.</small>
+    <small>© Turluna 2025 — All rights reserved.</small>
   </div>
 </footer>
+
+<script>
+  // Form submit: include selected branch in the email
+  document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('contact-form');
+    const status = document.getElementById('contact-status');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      status.textContent = 'Sending...';
+
+      const fd = new FormData(form);
+      const payload = Object.fromEntries(fd.entries());
+      // Mesajın başına spor branşını ekle
+      const branch = payload.service || 'N/A';
+      payload.message = `[Branch: ${branch}]\n\n` + (payload.message || '');
+
+      try {
+        const res = await fetch('/api/contact', {
+          method: 'POST',
+          headers: {'Content-Type':'application/json'},
+          body: JSON.stringify(payload)
+        });
+        const data = await res.json();
+        if (res.ok && data.ok) {
+          status.textContent = '✓ Your message was sent. Thank you.';
+          form.reset();
+        } else {
+          status.textContent = '✗ Failed to send. Please try again.';
+        }
+      } catch (err) {
+        status.textContent = '✗ Network error.';
+      }
+    });
+  });
+</script>
 <script src="lang.js"></script>
 </body>
 </html>
