@@ -3,19 +3,32 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>About Us — Turluna</title>
+  <title>Health Tourism — Turluna</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* Flags (round, full-image buttons) */
     .lang-switch.flags{display:flex;gap:8px;align-items:center;margin-left:auto}
     .lang-btn{width:32px;height:32px;border-radius:50%;border:1px solid #dcdcdc;background-size:cover;background-position:center;background-repeat:no-repeat;cursor:pointer;transition:transform .08s,box-shadow .08s;padding:0}
     .lang-btn:hover{transform:translateY(-1px)}
     .lang-btn.active{box-shadow:0 0 0 2px #111 inset}
-    /* Long menu items -> two lines */
     nav a.break{white-space:normal !important;display:inline-block;text-align:center;line-height:1.15;width:92px}
     @media (max-width:900px){ nav a.break{width:auto} }
-    /* minor heading polish */
+
+    .page-wrap{max-width:1100px;margin:0 auto;padding:0 16px}
+    .page-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:32px;align-items:start}
+    .side-media{display:flex;flex-direction:column;gap:16px}
+    .hero-img{width:100%;border-radius:10px;display:block}
     h1{color:#006666;font-family:"Georgia",serif}
+    .contact-form{display:grid;gap:12px}
+    .contact-form label{display:grid;gap:6px;font-weight:600}
+    .contact-form input,.contact-form textarea,.contact-form select{padding:10px;border:1px solid #ddd;border-radius:6px;font:inherit}
+    .contact-form button{padding:10px 14px;border:none;border-radius:8px;background:#0b5;color:#fff;cursor:pointer}
+    .contact-status{margin-top:8px}
+    .hp-field{display:none}
+    @media (max-width:900px){
+      .page-grid{grid-template-columns:1fr}
+      .side-media{order:1}
+      .main-content{order:2}
+    }
   </style>
 </head>
 <body>
@@ -39,33 +52,58 @@
   </div>
 </header>
 
-<main>
+<main class="page-wrap">
   <section class="section">
-    <h1>About Us</h1>
+    <div class="page-grid">
+      <div class="main-content">
+        <h1>Health Tourism</h1>
 
-    <p><strong>Turluna Lda.</strong> is a Lisbon-based company founded by two Turkish entrepreneurs. With an
-      innovative mindset, we work only with the best partners in every field we serve—keeping customer satisfaction
-      consistently at the highest level. Our core lines of business are <strong>tourism</strong>,
-      <strong>gastronomy</strong>, and <strong>consultancy</strong>.</p>
+        <p>With trusted medical partners and attentive trip planning, we design health-focused journeys that combine
+          excellent care with a smooth travel experience.</p>
 
-    <h2>Tourism</h2>
-    <p>Turluna delivers a true <strong>360-degree</strong> travel service. From <strong>air tickets</strong>,
-      <strong>hotel stays</strong>, <strong>car rental</strong>, and <strong>private transfers</strong> to
-      <strong>event tickets</strong> and <strong>museum/gallery admissions</strong>, we curate seamless journeys
-      end-to-end. You receive competitive rates, attentive support, and premium quality—so your trip feels effortless
-      from the very first plan to the final day.</p>
+        <h3>Hair Transplant</h3>
+        <p>We work with expert partner clinics and experienced teams, delivering a personalized plan, hygienic facilities,
+          and transparent aftercare—always at international standards.</p>
 
-    <h3>Health &amp; Sports Tourism</h3>
-    <p>We also design packages in <strong>health</strong> and <strong>sports</strong> tourism.</p>
+        <h3>Orthodontics &amp; Smile Design</h3>
+        <p>For orthodontic treatments and smile design, our clinic partners offer comprehensive diagnosis, treatment
+          planning, and aesthetics-driven restorations—from aligners to advanced cosmetic dentistry.</p>
 
-    <h2>Gastronomy</h2>
-    <p>We proudly showcase the rich flavors of Turkish cuisine through pop-up events at unique venues in Lisbon.
-      From traditional breakfasts to refined dinners, we bring authentic taste with modern touches.</p>
+        <h3>Physiotherapy</h3>
+        <p>We provide a calm setting away from city intensity—close to nature and the sea—while following a program
+          tailored to your recovery and mobility goals.</p>
+      </div>
 
-    <h2>Consultancy</h2>
-    <p>We provide practical guidance on Portugal visas and company formation in Portugal. Whether you need help
-      understanding the steps, preparing documents, or coordinating with local partners, our team can assist you
-      from start to finish.</p>
+      <aside class="side-media">
+        <img src="img/health.png" alt="Health Tourism with Turluna" class="hero-img">
+
+        <div class="form-card">
+          <h2>Contact Us</h2>
+          <p>Send us a message—tell us what you need and we’ll get back to you shortly.</p>
+
+          <form id="contact-form" class="contact-form">
+            <label><span>Name</span><input type="text" name="name" required></label>
+            <label><span>Email</span><input type="email" name="email" required></label>
+
+            <label><span>Service</span>
+              <select name="service" required>
+                <option value="Hair Transplant" selected>Hair Transplant</option>
+                <option value="Orthodontics & Smile Design">Orthodontics &amp; Smile Design</option>
+                <option value="Physiotherapy">Physiotherapy</option>
+              </select>
+            </label>
+
+            <label><span>Message</span>
+              <textarea name="message" rows="6" placeholder="Tell us briefly about your needs…" required></textarea>
+            </label>
+
+            <input type="text" name="website" class="hp-field" autocomplete="off" tabindex="-1">
+            <button type="submit">Send</button>
+            <div id="contact-status" class="contact-status"></div>
+          </form>
+        </div>
+      </aside>
+    </div>
   </section>
 </main>
 
@@ -75,6 +113,38 @@
   </div>
 </footer>
 
+<script>
+  // simple submit (same API endpoint you already use)
+  document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('contact-form');
+    const status = document.getElementById('contact-status');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      status.textContent = 'Sending...';
+
+      const fd = new FormData(form);
+      const payload = Object.fromEntries(fd.entries());
+
+      try {
+        const res = await fetch('/api/contact', {
+          method: 'POST',
+          headers: {'Content-Type':'application/json'},
+          body: JSON.stringify(payload)
+        });
+        const data = await res.json();
+        if (res.ok && data.ok) {
+          status.textContent = '✓ Your message was sent. Thank you.';
+          form.reset();
+        } else {
+          status.textContent = '✗ Failed to send. Please try again.';
+        }
+      } catch (err) {
+        status.textContent = '✗ Network error.';
+      }
+    });
+  });
+</script>
 <script src="lang.js"></script>
 </body>
 </html>
