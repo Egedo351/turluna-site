@@ -71,4 +71,17 @@ nav a.break{
 @media (max-width: 900px){
   nav a.break{ width: auto; }
 }
+/* --- Long menu items: break into two lines --- */
+nav a.break{
+  white-space: normal !important;     /* tek satır zorlaması varsa ez */
+  display: inline-block;
+  text-align: center;
+  line-height: 1.15;
+  width: 92px;                        /* dar alan -> 2 satıra kır */
+}
+
+/* dar ekranlarda genişlik kısıtını kaldır (menü sarmalansın) */
+@media (max-width: 900px){
+  nav a.break{ width: auto; }
+}
 
