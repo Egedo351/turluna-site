@@ -6,50 +6,64 @@
   <title>Travels & Holidays — Turluna</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* Flags (full-bleed round) */
-    .lang-switch.flags{display:flex;gap:8px;align-items:center;margin-left:auto}
-    .lang-btn{width:32px;height:32px;border-radius:50%;border:1px solid #dcdcdc;background-size:cover;background-position:center;background-repeat:no-repeat;cursor:pointer;transition:transform .08s,box-shadow .08s;padding:0}
-    .lang-btn:hover{transform:translateY(-1px)}
-    .lang-btn.active{box-shadow:0 0 0 2px #111 inset}
-
-    /* Long menu items: break into two lines */
-    nav a.break{
-      white-space: normal !important;
-      display: inline-block;
-      text-align: center;
-      line-height: 1.15;
-      width: 92px;
+    /* stacked page title */
+    .stack-title{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      margin: 0 0 .6em;
     }
-    @media (max-width: 900px){
-      nav a.break{ width:auto; }
+    .stack-title .stack-main{
+      font-family:"Georgia",serif;
+      font-size: 2.6em;
+      line-height:1;
+    }
+    .stack-title .stack-sub{
+      font-size: 1.1em;
+      line-height:1.2;
+      margin-top:.25em;
+      opacity:.95;
+      letter-spacing:.2px;
     }
 
-    /* Layout (same as health) */
-    .page-wrap{max-width:1100px;margin:0 auto;padding:0 16px}
-    .page-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:32px;align-items:start}
-    .side-media{display:flex;flex-direction:column;gap:16px}
-    .hero-img{width:100%;border-radius:10px;display:block}
-
-    /* Headings */
-    h1{color:#006666;font-family:"Georgia",serif;font-size:2.2em}
-    h2{margin-top:1.2em;font-size:1.4em}
-    h3{margin-top:.8em;font-size:1.15em}
-
-    /* Form */
-    .contact-form{display:grid;gap:12px}
-    .contact-form label{display:grid;gap:6px;font-weight:600}
-    .contact-form input,.contact-form textarea,.contact-form select{
-      padding:10px;border:1px solid #ddd;border-radius:6px;font:inherit
+    .page-layout{
+      display:flex;
+      flex-wrap:wrap;
+      gap:24px;
+      align-items:flex-start;
     }
-    .contact-form button{padding:10px 14px;border:none;border-radius:8px;background:#0b5;color:#fff;cursor:pointer}
-    .contact-status{margin-top:8px}
-    .hp-field{display:none}
-
-    /* Responsive */
-    @media (max-width:900px){
-      .page-grid{grid-template-columns:1fr}
-      .side-media{order:1}
-      .main-content{order:2}
+    .page-layout img{
+      max-width:420px;
+      flex:1;
+      border-radius:8px;
+    }
+    .page-text{
+      flex:2;
+      min-width:280px;
+    }
+    form{
+      margin-top:1.5em;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+    input, select, textarea{
+      padding:8px;
+      font-size:1em;
+      width:100%;
+      border:1px solid #ccc;
+      border-radius:4px;
+    }
+    button{
+      background:#009879;
+      color:white;
+      border:none;
+      padding:10px;
+      border-radius:4px;
+      cursor:pointer;
+    }
+    button:hover{
+      background:#007f63;
     }
   </style>
 </head>
@@ -58,169 +72,119 @@
   <div class="container">
     <nav>
       <img src="logo.png.jpg" alt="Turluna logo" class="logo">
+      <a href="index.html" data-i18n="nav.about">About Us</a>
+      <a href="holidays.html" data-i18n="nav.holidays">Travels & Holidays</a>
+      <a href="health.html" class="break" data-i18n="nav.health">Health Tourism</a>
+      <a href="sport.html" class="break" data-i18n="nav.sport">Sport Tourism</a>
+      <a href="gastronomy.html" data-i18n="nav.gastronomy">Gastronomy</a>
 
-      <a href="index.html">About Us</a>
-      <a href="holidays.html">Travels & Holidays</a>
-      <a href="health.html" class="break">Health<br>Tourism</a>
-      <a href="sport.html"  class="break">Sport<br>Tourism</a>
-      <a href="gastronomy.html">Gastronomy</a>
-
-      <div class="lang-switch flags">
-        <button class="lang-btn" data-lang="en" onclick="egedoSetLang('en')" aria-label="English"   style="background-image:url('https://flagcdn.com/w40/gb.png');"></button>
-        <button class="lang-btn" data-lang="tr" onclick="egedoSetLang('tr')" aria-label="Türkçe"    style="background-image:url('https://flagcdn.com/w40/tr.png');"></button>
-        <button class="lang-btn" data-lang="pt" onclick="egedoSetLang('pt')" aria-label="Português" style="background-image:url('https://flagcdn.com/w40/pt.png');"></button>
-      </div>
+      <!-- Dil butonları -->
+      <span class="lang-switch" style="margin-left:12px; display:inline-flex; gap:8px;">
+        <button type="button" class="lang-btn" data-lang="en" onclick="egedoSetLang('en')">
+          <img src="https://flagcdn.com/w20/gb.png" alt="English">
+        </button>
+        <button type="button" class="lang-btn" data-lang="tr" onclick="egedoSetLang('tr')">
+          <img src="https://flagcdn.com/w20/tr.png" alt="Türkçe">
+        </button>
+        <button type="button" class="lang-btn" data-lang="pt" onclick="egedoSetLang('pt')">
+          <img src="https://flagcdn.com/w20/pt.png" alt="Português">
+        </button>
+      </span>
     </nav>
   </div>
 </header>
 
-<main class="page-wrap">
+<main>
   <section class="section">
-    <div class="page-grid">
-      <!-- LEFT: COPY -->
-      <div class="main-content">
-        <h1>Travels & Holidays</h1>
+    <h1 class="stack-title">
+      <span class="stack-main">Plan</span>
+      <span class="stack-sub">your travel</span>
+    </h1>
 
+    <div class="page-layout">
+      <div class="page-text">
         <p>
-          At <strong>Turluna</strong>, we design truly <strong>360-degree</strong> holidays. From <strong>accommodation</strong> and <strong>flights</strong> to
-          <strong>private transfers</strong>, <strong>travel insurance</strong>, <strong>visa support</strong> and curated add-ons, your journey is managed end-to-end.
-          During your trip, our <strong>24/7 customer care</strong> is one call away—so any disruption is handled quickly and your experience stays smooth.
-          We can enrich your plan with <strong>events</strong>, <strong>museum &amp; gallery entries</strong>, tastings and themed tours—always with trusted partners and clear itineraries.
+          At <b>Turluna</b>, we design truly <b>360-degree</b> holidays. From
+          <b>accommodation</b> and <b>flights</b> to <b>private transfers, travel insurance,
+          visa support</b> and curated add-ons, your journey is managed end-to-end. During
+          your trip, our <b>24/7 customer care</b> is one call away—so any disruption is
+          handled quickly and your experience stays smooth. We can enrich your plan with
+          <b>events, museum & gallery entries</b>, tastings and themed tours—always with
+          trusted partners and clear itineraries.
         </p>
-
         <h3>All-in service, flexible by design</h3>
         <p>
-          Need a short city escape or a multi-country route? We tailor the trip around your dates, budget and interests.
-          You get competitive rates, transparent planning and reliable support—so you only focus on enjoying the journey.
+          Need a short city escape or a multi-country route? We tailor the trip around your
+          dates, budget and interests. You get competitive rates, transparent planning and
+          reliable support—so you only focus on enjoying the journey.
         </p>
+
+        <h3>Plan with Turluna</h3>
+        <form method="POST" action="/api/contact">
+          <input type="text" name="name" placeholder="Name" required>
+          <input type="email" name="email" placeholder="Email" required>
+
+          <label for="service">Type of service</label>
+          <select id="service" name="service" required>
+            <option>Accommodation</option>
+            <option>Transportation</option>
+            <option>Transfer</option>
+            <option>Rent a car</option>
+            <option>Museums & Galleries</option>
+            <option>Events</option>
+          </select>
+
+          <label for="location">Location</label>
+          <select id="location" name="location" required>
+            <option>China</option>
+            <option>Japan</option>
+            <option>France</option>
+            <option>United Kingdom</option>
+            <option>Türkiye</option>
+            <option>Greece</option>
+            <option>Brazil</option>
+            <option>Morocco</option>
+            <option>Indonesia</option>
+            <option>Sweden</option>
+            <option>Norway</option>
+            <option>Finland</option>
+            <option>Canada</option>
+            <option>USA</option>
+            <option>Italy</option>
+            <option>Spain</option>
+            <option>Germany</option>
+            <option>Netherlands</option>
+            <option>Belgium</option>
+            <option>Austria</option>
+            <option>Switzerland</option>
+            <option>Denmark</option>
+            <option>Poland</option>
+            <option>Czech Republic</option>
+            <option>Hungary</option>
+            <option>Thailand</option>
+            <option>Malaysia</option>
+            <option>Australia</option>
+            <option>New Zealand</option>
+            <option>UAE</option>
+            <option>Other</option>
+          </select>
+
+          <textarea name="message" placeholder="Dates, number of guests, special interests..." rows="4"></textarea>
+          <button type="submit">Send</button>
+        </form>
       </div>
 
-      <!-- RIGHT: MEDIA + FORM -->
-      <aside class="side-media">
-        <img src="img/leisure.png" alt="Tailored holidays by Turluna" class="hero-img">
-
-        <div class="form-card">
-          <h2>Plan with Turluna</h2>
-          <p>Tell us what you’re looking for and we’ll design a seamless itinerary.</p>
-
-          <form id="contact-form" class="contact-form">
-            <label>
-              <span>Name</span>
-              <input type="text" name="name" required>
-            </label>
-            <label>
-              <span>Email</span>
-              <input type="email" name="email" required>
-            </label>
-
-            <!-- Type of Service -->
-            <label>
-              <span>Type of service</span>
-              <select name="service" required>
-                <option value="Accommodation" selected>Accommodation</option>
-                <option value="Transportation">Transportation (Flights/Trains/Buses)</option>
-                <option value="Transfer">Transfer (Private/Shared)</option>
-                <option value="Rent a Car">Rent a Car</option>
-                <option value="Museums & Galleries">Museums &amp; Galleries</option>
-                <option value="Events">Events</option>
-              </select>
-            </label>
-
-            <!-- Location with datalist (30 countries + Other) -->
-            <label>
-              <span>Location</span>
-              <input type="text" name="location" list="countries" placeholder="e.g., Portugal, UK, Türkiye" required>
-              <datalist id="countries">
-                <option>Portugal</option>
-                <option>United Kingdom</option>
-                <option>France</option>
-                <option>Spain</option>
-                <option>Italy</option>
-                <option>Germany</option>
-                <option>Greece</option>
-                <option>Türkiye</option>
-                <option>Switzerland</option>
-                <option>Austria</option>
-                <option>Czechia</option>
-                <option>Poland</option>
-                <option>Hungary</option>
-                <option>Croatia</option>
-                <option>Sweden</option>
-                <option>Norway</option>
-                <option>Finland</option>
-                <option>USA</option>
-                <option>Canada</option>
-                <option>Brazil</option>
-                <option>Argentina</option>
-                <option>Mexico</option>
-                <option>Morocco</option>
-                <option>Egypt</option>
-                <option>China</option>
-                <option>Japan</option>
-                <option>South Korea</option>
-                <option>Thailand</option>
-                <option>Indonesia</option>
-                <option>Australia</option>
-                <option>Other</option>
-              </datalist>
-            </label>
-
-            <label>
-              <span>Message</span>
-              <textarea name="message" rows="6" placeholder="Dates, number of guests, special interests…" required></textarea>
-            </label>
-
-            <input type="text" name="website" class="hp-field" autocomplete="off" tabindex="-1">
-            <button type="submit">Send</button>
-            <div id="contact-status" class="contact-status"></div>
-          </form>
-        </div>
-      </aside>
+      <img src="img/leisure.png" alt="Travel experiences with Turluna">
     </div>
   </section>
 </main>
 
 <footer>
   <div class="container">
-    <small>© Turluna 2025 — All rights reserved.</small>
+    <small>© Turluna 2025</small>
   </div>
 </footer>
 
-<script>
-  // Form submit: include service + location in the email
-  document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('contact-form');
-    const status = document.getElementById('contact-status');
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      status.textContent = 'Sending...';
-
-      const fd = new FormData(form);
-      const payload = Object.fromEntries(fd.entries());
-      const service  = payload.service  || 'N/A';
-      const location = payload.location || 'N/A';
-      payload.message = `[Service: ${service}] [Location: ${location}]\n\n` + (payload.message || '');
-
-      try {
-        const res = await fetch('/api/contact', {
-          method: 'POST',
-          headers: {'Content-Type':'application/json'},
-          body: JSON.stringify(payload)
-        });
-        const data = await res.json();
-        if (res.ok && data.ok) {
-          status.textContent = '✓ Your message was sent. Thank you.';
-          form.reset();
-        } else {
-          status.textContent = '✗ Failed to send. Please try again.';
-        }
-      } catch (err) {
-        status.textContent = '✗ Network error.';
-      }
-    });
-  });
-</script>
 <script src="lang.js"></script>
 </body>
 </html>
