@@ -10,25 +10,31 @@
     .lang-btn{width:32px;height:32px;border-radius:50%;border:1px solid #dcdcdc;background-size:cover;background-position:center;background-repeat:no-repeat;cursor:pointer;transition:transform .08s,box-shadow .08s;padding:0}
     .lang-btn:hover{transform:translateY(-1px)}
     .lang-btn.active{box-shadow:0 0 0 2px #111 inset}
-    nav a.break{white-space:normal !important;display:inline-block;text-align:center;line-height:1.15;width:92px}
-    @media (max-width:900px){ nav a.break{width:auto} }
+    nav a.break{white-space:normal!important;display:inline-block;text-align:center;line-height:1.15;width:92px}
+    @media (max-width:900px){nav a.break{width:auto}}
 
     .page-wrap{max-width:1100px;margin:0 auto;padding:0 16px}
     .page-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:32px;align-items:start}
-    .side-media{display:flex;flex-direction:column;gap:16px}
     .hero-img{width:100%;border-radius:10px;display:block}
-    h1{color:#006666;font-family:"Georgia",serif}
+
+    .form-section{max-width:820px;margin:40px auto 0 auto;padding:0 8px}
+    .form-title{margin:0 0 8px 0;text-align:center}
+    .form-lead{margin:0 0 18px 0;text-align:center;color:#333}
+
+    h1{color:#006666;font-family:"Georgia",serif;font-size:2.2em}
+    h2{margin-top:1.2em;font-size:1.4em}
+    h3{margin-top:.8em;font-size:1.15em}
+
     .contact-form{display:grid;gap:12px}
+    .row-two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
     .contact-form label{display:grid;gap:6px;font-weight:600}
-    .contact-form input,.contact-form textarea,.contact-form select{padding:10px;border:1px solid #ddd;border-radius:6px;font:inherit}
+    .contact-form input,.contact-form textarea,.contact-form select{
+      padding:10px;border:1px solid #ddd;border-radius:6px;font:inherit
+    }
+    .contact-form textarea{min-height:150px}
     .contact-form button{padding:10px 14px;border:none;border-radius:8px;background:#0b5;color:#fff;cursor:pointer}
     .contact-status{margin-top:8px}
     .hp-field{display:none}
-    @media (max-width:900px){
-      .page-grid{grid-template-columns:1fr}
-      .side-media{order:1}
-      .main-content{order:2}
-    }
   </style>
 </head>
 <body>
@@ -36,13 +42,11 @@
   <div class="container">
     <nav>
       <img src="logo.png.jpg" alt="Turluna logo" class="logo">
-
       <a href="index.html">About Us</a>
       <a href="holidays.html" class="break">Plan<br>Your Travel</a>
       <a href="health.html" class="break">Health<br>Tourism</a>
       <a href="sport.html"  class="break">Sport<br>Tourism</a>
       <a href="gastronomy.html">Gastronomy</a>
-
       <div class="lang-switch flags">
         <button class="lang-btn" data-lang="en" onclick="egedoSetLang('en')" aria-label="English"   style="background-image:url('https://flagcdn.com/w40/gb.png');"></button>
         <button class="lang-btn" data-lang="tr" onclick="egedoSetLang('tr')" aria-label="Türkçe"    style="background-image:url('https://flagcdn.com/w40/tr.png');"></button>
@@ -55,95 +59,71 @@
 <main class="page-wrap">
   <section class="section">
     <div class="page-grid">
-      <div class="main-content">
+      <div>
         <h1>Health Tourism</h1>
-
-        <p>With trusted medical partners and attentive trip planning, we design health-focused journeys that combine
-          excellent care with a smooth travel experience.</p>
-
+        <p>With trusted medical partners and attentive trip planning, we design health-focused journeys that combine excellent care with a smooth travel experience.</p>
         <h3>Hair Transplant</h3>
-        <p>We work with expert partner clinics and experienced teams, delivering a personalized plan, hygienic facilities,
-          and transparent aftercare—always at international standards.</p>
-
-        <h3>Orthodontics &amp; Smile Design</h3>
-        <p>For orthodontic treatments and smile design, our clinic partners offer comprehensive diagnosis, treatment
-          planning, and aesthetics-driven restorations—from aligners to advanced cosmetic dentistry.</p>
-
+        <p>We collaborate with expert partner clinics in Istanbul, Antalya and Bursa—offering personalized plans, hygienic facilities and transparent aftercare.</p>
+        <h3>Orthodontics & Smile Design</h3>
+        <p>With clinic partners in Istanbul, we provide comprehensive diagnosis, treatment planning and aesthetic-driven restorations—from aligners to advanced cosmetic dentistry.</p>
         <h3>Physiotherapy</h3>
-        <p>We provide a calm setting away from city intensity—close to nature and the sea—while following a program
-          tailored to your recovery and mobility goals.</p>
+        <p>In Ayvalık, away from city intensity, we offer one-to-one therapy immersed in nature and by the sea—while following a program tailored to your recovery and mobility goals.</p>
       </div>
+      <div><img src="img/health.png" alt="Health Tourism with Turluna" class="hero-img"></div>
+    </div>
 
-      <aside class="side-media">
-        <img src="img/health.png" alt="Health Tourism with Turluna" class="hero-img">
+    <!-- ORTA: FORM -->
+    <div class="form-section">
+      <h2 class="form-title">Tell us about your needs</h2>
+      <p class="form-lead">Pick a service and share your details—we’ll arrange the right plan.</p>
 
-        <div class="form-card">
-          <h2>Contact Us</h2>
-          <p>Send us a message—tell us what you need and we’ll get back to you shortly.</p>
-
-          <form id="contact-form" class="contact-form">
-            <label><span>Name</span><input type="text" name="name" required></label>
-            <label><span>Email</span><input type="email" name="email" required></label>
-
-            <label><span>Service</span>
-              <select name="service" required>
-                <option value="Hair Transplant" selected>Hair Transplant</option>
-                <option value="Orthodontics & Smile Design">Orthodontics &amp; Smile Design</option>
-                <option value="Physiotherapy">Physiotherapy</option>
-              </select>
-            </label>
-
-            <label><span>Message</span>
-              <textarea name="message" rows="6" placeholder="Tell us briefly about your needs…" required></textarea>
-            </label>
-
-            <input type="text" name="website" class="hp-field" autocomplete="off" tabindex="-1">
-            <button type="submit">Send</button>
-            <div id="contact-status" class="contact-status"></div>
-          </form>
+      <form id="contact-form" class="contact-form">
+        <div class="row-two">
+          <label><span>Name</span><input type="text" name="name" required></label>
+          <label><span>Email</span><input type="email" name="email" required></label>
         </div>
-      </aside>
+
+        <label>
+          <span>Service</span>
+          <select name="service" required>
+            <option value="Hair Transplant" selected>Hair Transplant</option>
+            <option value="Orthodontics & Smile Design">Orthodontics & Smile Design</option>
+            <option value="Physiotherapy">Physiotherapy</option>
+          </select>
+        </label>
+
+        <label><span>Message</span>
+          <textarea name="message" placeholder="Dates, medical notes, preferred city, expectations…" required></textarea>
+        </label>
+
+        <input type="text" name="website" class="hp-field" autocomplete="off" tabindex="-1">
+        <button type="submit">Send</button>
+        <div id="contact-status" class="contact-status"></div>
+      </form>
     </div>
   </section>
 </main>
 
 <footer>
-  <div class="container">
-    <small>© Turluna 2025 — All rights reserved.</small>
-  </div>
+  <div class="container"><small>© Turluna 2025 — All rights reserved.</small></div>
 </footer>
 
 <script>
-  // simple submit (same API endpoint you already use)
-  document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('contact-form');
-    const status = document.getElementById('contact-status');
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      status.textContent = 'Sending...';
-
-      const fd = new FormData(form);
-      const payload = Object.fromEntries(fd.entries());
-
-      try {
-        const res = await fetch('/api/contact', {
-          method: 'POST',
-          headers: {'Content-Type':'application/json'},
-          body: JSON.stringify(payload)
-        });
-        const data = await res.json();
-        if (res.ok && data.ok) {
-          status.textContent = '✓ Your message was sent. Thank you.';
-          form.reset();
-        } else {
-          status.textContent = '✗ Failed to send. Please try again.';
-        }
-      } catch (err) {
-        status.textContent = '✗ Network error.';
-      }
-    });
+document.addEventListener('DOMContentLoaded',function(){
+  const f=document.getElementById('contact-form'), s=document.getElementById('contact-status');
+  f.addEventListener('submit',async e=>{
+    e.preventDefault(); s.textContent='Sending...';
+    const fd=new FormData(f), payload=Object.fromEntries(fd.entries());
+    const service = payload.service || 'N/A';
+    payload.message = `[Service: ${service}]\n\n` + (payload.message||'');
+    try{
+      const res=await fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+      const data=await res.json();
+      if(res.ok&&data.ok){ s.textContent='✓ Your message was sent. Thank you.'; f.reset(); }
+      else{ s.textContent='✗ Failed to send. Please try again.'; }
+    }catch(_){ s.textContent='✗ Network error.'; }
   });
+});
 </script>
 <script src="lang.js"></script>
 </body>
