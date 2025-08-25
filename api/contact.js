@@ -1,57 +1,91 @@
 // api/contact.js
-const nodemailer = require('nodemailer');
+const nodemailer = require("nodemailer");
 
-module.exports = async (req, res) => {
-  // Sadece POST'a izin verelim
-  if (req.method !== 'POST') {
-    return res.status(405).json({ ok: false, error: 'Method not allowed' });
+function boolSecure(port) {
+  const p = Number(port || 0);
+  return p === 465; // 465 -> secure TLS (SMTPS), 587 -> STARTTLS (secure:false)
+}
+
+exports.default = async function handler(req, res) {
+  if (req.method !== "POST") {
+    return res.status(405).json({ ok: false, error: "Method Not Allowed" });
   }
 
   try {
-    const { name, email, message, website } = req.body || {};
+    const {
+      name = "",
+      email = "",
+      message = "",
+      service = "",
+      location = "",
+      website = "" // honeypot
+    } = req.body || {};
 
-    // Basit anti-spam (honeypot)
-    if (website) return res.status(200).json({ ok: true });
-
+    // basic validation
+    if (website) {
+      // spam
+      return res.status(200).json({ ok: true, skipped: true });
+    }
     if (!name || !email || !message) {
-      return res.status(400).json({ ok: false, error: 'Missing fields' });
+      return res.status(400).json({ ok: false, error: "Missing fields" });
     }
 
-    // Env değişkenleri (Vercel Settings → Environment Variables)
-    const host   = process.env.SMTP_HOST;          // smtp.zoho.eu
-    const port   = Number(process.env.SMTP_PORT);  // 465 veya 587
-    const secure = port === 465 || String(process.env.SMTP_SECURE) === 'true';
-    const user   = process.env.SMTP_USER;          // info@turluna.com (veya egodo)
-    const pass   = process.env.SMTP_PASS;          // Zoho App Password (boşluksuz)
-    const to     = process.env.RECEIVER_EMAIL || user;
+    const {
+      SMTP_HOST,
+      SMTP_PORT,
+      SMTP_USER,
+      SMTP_PASS,
+      RECEIVER_EMAIL
+    } = process.env;
 
-    // SMTP transporter
+    if (!SMTP_HOST || !SMTP_PORT || !SMTP_USER || !SMTP_PASS || !RECEIVER_EMAIL) {
+      return res.status(500).json({
+        ok: false,
+        error: "Missing SMTP environment variables"
+      });
+    }
+
     const transporter = nodemailer.createTransport({
-      host, port, secure,
-      auth: { user, pass }
+      host: SMTP_HOST,
+      port: Number(SMTP_PORT),
+      secure: boolSecure(SMTP_PORT),
+      auth: {
+        user: SMTP_USER,           // MUST be the same mailbox as 'from' for Zoho
+        pass: SMTP_PASS
+      },
+      // Bazı Zoho bölgelerinde CA zinciri katı geliyor. Gerekirse açın:
+      // tls: { rejectUnauthorized: false }
     });
 
-    // Mail içeriği
-    const subject = `New contact form • ${name}`;
-    const plain   =
-`Name: ${name}
-Email: ${email}
+    // Kısa bir bağlantı kontrolü (log’da görülsün)
+    await transporter.verify();
 
-Message:
-${message}`;
+    const subject = `Turluna Website Contact — ${name}`;
+
+    const composed = [
+      service ? `Service: ${service}` : null,
+      location ? `Location: ${location}` : null,
+      `From: ${name} <${email}>`,
+      "",
+      message
+    ]
+      .filter(Boolean)
+      .join("\n");
 
     const info = await transporter.sendMail({
-      from: `"Website" <${user}>`,
-      replyTo: email,
-      to,
+      from: `"Turluna Website" <${SMTP_USER}>`, // Zoho: from == authenticated user
+      to: RECEIVER_EMAIL,
+      replyTo: email, // cevapla dediğinde misafir mailine gitsin
       subject,
-      text: plain,
-      html: plain.replace(/\n/g, '<br>')
+      text: composed
     });
 
     return res.status(200).json({ ok: true, id: info.messageId });
   } catch (err) {
-    console.error('Mailer error:', err);
-    return res.status(500).json({ ok: false, error: 'Mailer error' });
+    // Hatanın özetini döndürüyoruz ki Vercel Logs’ta ne olduğunu net görelim
+    return res.status(500).json({
+      ok: false,
+      error: err && err.message ? err.message : "Unknown Error"
+    });
   }
 };
