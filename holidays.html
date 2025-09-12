@@ -17,17 +17,21 @@
     .page-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:32px;align-items:start}
     .hero-img{width:100%;border-radius:10px;display:block}
 
-    .form-section{max-width:650px;margin:40px auto 0 auto;padding:0 8px}
+    .form-section{max-width:820px;margin:40px auto 0 auto;padding:0 8px}
     .form-title{margin:0 0 8px 0;text-align:center}
     .form-lead{margin:0 0 18px 0;text-align:center;color:#333}
 
     h1{color:#006666;font-family:"Georgia",serif;font-size:2.2em}
     h2{margin-top:1.2em;font-size:1.4em}
+    h3{margin-top:.8em;font-size:1.15em}
 
     .contact-form{display:grid;gap:12px}
     .row-two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
     .contact-form label{display:grid;gap:6px;font-weight:600}
-    .contact-form input{padding:10px;border:1px solid #ddd;border-radius:6px;font:inherit}
+    .contact-form input,.contact-form textarea,.contact-form select{
+      padding:10px;border:1px solid #ddd;border-radius:6px;font:inherit
+    }
+    .contact-form textarea{min-height:150px}
     .contact-form button{padding:10px 14px;border:none;border-radius:8px;background:#0b5;color:#fff;cursor:pointer}
     .contact-status{margin-top:8px}
     .hp-field{display:none}
@@ -39,9 +43,9 @@
     <nav>
       <img src="logo.png.jpg" alt="Turluna logo" class="logo">
       <a href="index.html">About Us</a>
-      <a href="holidays.html" class="break active">Plan<br>Your Travel</a>
+      <a href="holidays.html" class="break">Plan<br>Your Travel</a>
       <a href="health.html" class="break">Health<br>Tourism</a>
-      <a href="sport.html" class="break">Sport<br>Tourism</a>
+      <a href="sport.html"  class="break">Sport<br>Tourism</a>
       <a href="gastronomy.html">Gastronomy</a>
       <a href="consultancy.html">Consultancy</a>
       <div class="lang-switch flags">
@@ -55,44 +59,68 @@
 
 <main class="page-wrap">
   <section class="section">
+    <!-- ÜST: yazı + görsel -->
     <div class="page-grid">
       <div>
         <h1>Travels & Holidays</h1>
         <p>
-          We design holiday packages tailored to your wishes, whether it’s a beach escape, 
-          cultural exploration, or a family adventure. Turluna brings you closer to 
-          unforgettable destinations.
+          At <strong>Turluna</strong>, we design truly <strong>360-degree</strong> holidays. From <strong>accommodation</strong> and <strong>flights</strong> to
+          <strong>private transfers</strong>, <strong>travel insurance</strong>, <strong>visa support</strong> and curated add-ons, your journey is managed end-to-end.
+          During your trip, our <strong>24/7 customer care</strong> is one call away—so any disruption is handled quickly and your experience stays smooth.
+          We can enrich your plan with <strong>events</strong>, <strong>museum &amp; gallery entries</strong>, tastings and themed tours—always with trusted partners and clear itineraries.
+          <strong>We also craft exceptional city tours in Lisbon, Istanbul and Paris</strong>—designed for authentic local moments and memorable highlights.
         </p>
-
-        <h2>City Tours</h2>
-        <p>
-          We also craft exceptional <strong>guided city tours</strong> in Lisbon, Istanbul, and Paris, 
-          offering authentic insights with local experts.
-        </p>
-
-        <h2>Customized Packages</h2>
-        <p>
-          Every journey is unique. We create tailor-made packages that combine flights, 
-          hotels, and local experiences for your convenience.
-        </p>
+        <h3>All-in service, flexible by design</h3>
+        <p>Need a short city escape or a multi-country route? We tailor the trip around your dates, budget and interests.
+           You get competitive rates, transparent planning and reliable support—so you only focus on enjoying the journey.</p>
       </div>
-      <div>
-        <img src="img/holidays.png" alt="Holiday packages by Turluna" class="hero-img">
-      </div>
+      <div><img src="img/leisure.png" alt="Tailored holidays by Turluna" class="hero-img"></div>
     </div>
 
-    <!-- Newsletter Form -->
+    <!-- ORTA: FORM -->
     <div class="form-section">
-      <h2 class="form-title">Get notified about our offers</h2>
-      <p class="form-lead">Subscribe to receive updates on our exclusive travel packages.</p>
+      <h2 class="form-title">Plan with Turluna</h2>
+      <p class="form-lead">Tell us what you’re looking for and we’ll design a seamless itinerary.</p>
 
-      <form id="newsletter-form" class="contact-form">
+      <form id="contact-form" class="contact-form">
         <div class="row-two">
           <label><span>Name</span><input type="text" name="name" required></label>
           <label><span>Email</span><input type="email" name="email" required></label>
         </div>
+
+        <label>
+          <span>Type of service</span>
+          <select name="service" required>
+            <option value="Accommodation" selected>Accommodation</option>
+            <option value="Transportation">Transportation (Flights/Trains/Buses)</option>
+            <option value="Transfer">Transfer (Private/Shared)</option>
+            <option value="Rent a Car">Rent a Car</option>
+            <option value="Museums & Galleries">Museums &amp; Galleries</option>
+            <option value="Events">Events</option>
+          </select>
+        </label>
+
+        <label>
+          <span>Location</span>
+          <input type="text" name="location" list="countries" placeholder="e.g., Portugal, UK, Türkiye" required>
+          <datalist id="countries">
+            <option>Portugal</option><option>United Kingdom</option><option>France</option><option>Spain</option>
+            <option>Italy</option><option>Germany</option><option>Greece</option><option>Türkiye</option>
+            <option>Switzerland</option><option>Austria</option><option>Czechia</option><option>Poland</option>
+            <option>Hungary</option><option>Croatia</option><option>Sweden</option><option>Norway</option>
+            <option>Finland</option><option>USA</option><option>Canada</option><option>Brazil</option>
+            <option>Argentina</option><option>Mexico</option><option>Morocco</option><option>Egypt</option>
+            <option>China</option><option>Japan</option><option>South Korea</option><option>Thailand</option>
+            <option>Indonesia</option><option>Australia</option><option>Other</option>
+          </datalist>
+        </label>
+
+        <label><span>Message</span>
+          <textarea name="message" rows="6" placeholder="Dates, number of guests, special interests…" required></textarea>
+        </label>
+
         <input type="text" name="website" class="hp-field" autocomplete="off" tabindex="-1">
-        <button type="submit">Subscribe</button>
+        <button type="submit">Send</button>
         <div id="contact-status" class="contact-status"></div>
       </form>
     </div>
@@ -105,16 +133,17 @@
 
 <script>
 document.addEventListener('DOMContentLoaded',function(){
-  const f=document.getElementById('newsletter-form'), s=document.getElementById('contact-status');
+  const f=document.getElementById('contact-form'), s=document.getElementById('contact-status');
   f.addEventListener('submit',async e=>{
     e.preventDefault(); s.textContent='Sending...';
     const fd=new FormData(f), payload=Object.fromEntries(fd.entries());
-    payload.message = `[Newsletter: Holidays]\n\n` + (payload.message||'');
+    const service = payload.service || 'N/A', location = payload.location || 'N/A';
+    payload.message = `[Service: ${service}] [Location: ${location}]\n\n` + (payload.message||'');
     try{
       const res=await fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
       const data=await res.json();
-      if(res.ok&&data.ok){ s.textContent='✓ Subscribed. Thank you!'; f.reset(); }
-      else{ s.textContent='✗ Failed to submit. Please try again.'; }
+      if(res.ok&&data.ok){ s.textContent='✓ Your message was sent. Thank you.'; f.reset(); }
+      else{ s.textContent='✗ Failed to send. Please try again.'; }
     }catch(_){ s.textContent='✗ Network error.'; }
   });
 });
