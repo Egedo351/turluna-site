@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Navbar -->
+  <!-- Header -->
   <header>
     <nav>
       <a href="index.html">About Us</a>
@@ -18,15 +18,15 @@
       <a href="consultancy.html" class="active">Consultancy</a>
     </nav>
     <div class="language-switcher">
-      <a href="consultancy.html"><img src="img/flag-uk.png" alt="English"></a>
-      <a href="consultancy-tr.html"><img src="img/flag-tr.png" alt="Türkçe"></a>
-      <a href="consultancy-pt.html"><img src="img/flag-pt.png" alt="Português"></a>
+      <a href="#"><img src="img/flag-uk.png" alt="English"></a>
+      <a href="#"><img src="img/flag-tr.png" alt="Türkçe"></a>
+      <a href="#"><img src="img/flag-pt.png" alt="Português"></a>
     </div>
   </header>
 
   <!-- Consultancy Content -->
   <main>
-    <section class="consultancy">
+    <section class="intro">
       <div class="container">
         <h1>Consultancy Services</h1>
         <p>
@@ -35,10 +35,14 @@
           planning a holiday, relocating, or expanding your business, our team is 
           here to guide you every step of the way.
         </p>
+      </div>
+    </section>
 
+    <section class="services">
+      <div class="container">
         <h2>Travel Consultancy</h2>
         <p>
-          We assist with travel insurance, visa support, and tailor-made travel 
+          We assist with travel insurance, visa support, and travel 
           solutions designed to make your journey stress-free and enjoyable.
         </p>
 
@@ -52,7 +56,7 @@
       </div>
     </section>
 
-    <!-- Contact Form -->
+    <!-- Contact Form (same style as Gastronomy page) -->
     <section class="newsletter">
       <div class="container">
         <h2>Tell us what you need</h2>
@@ -64,7 +68,7 @@
           <input type="email" id="email" name="email" placeholder="Your email" required>
 
           <label for="message">Message</label>
-          <textarea id="message" name="message" placeholder="Tell us what you need..." rows="5" required></textarea>
+          <textarea id="message" name="message" rows="5" placeholder="Tell us what you need..." required></textarea>
 
           <button type="submit">Send</button>
         </form>
