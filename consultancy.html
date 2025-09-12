@@ -10,16 +10,18 @@
   <!-- Navbar -->
   <header>
     <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="travels.html">Travels & Holidays</a></li>
-        <li><a href="sport.html">Sport</a></li>
-        <li><a href="health.html">Health</a></li>
-        <li><a href="gastronomy.html">Gastronomy</a></li>
-        <li><a href="consultancy.html" class="active">Consultancy</a></li>
-        <li><a href="about.html">About Us</a></li>
-      </ul>
+      <a href="index.html">About Us</a>
+      <a href="holidays.html" class="break">Plan<br>Your Travel</a>
+      <a href="health.html" class="break">Health<br>Tourism</a>
+      <a href="sport.html" class="break">Sport<br>Tourism</a>
+      <a href="gastronomy.html">Gastronomy</a>
+      <a href="consultancy.html" class="active">Consultancy</a>
     </nav>
+    <div class="language-switcher">
+      <a href="consultancy.html"><img src="img/flag-uk.png" alt="English"></a>
+      <a href="consultancy-tr.html"><img src="img/flag-tr.png" alt="Türkçe"></a>
+      <a href="consultancy-pt.html"><img src="img/flag-pt.png" alt="Português"></a>
+    </div>
   </header>
 
   <!-- Consultancy Content -->
@@ -47,16 +49,14 @@
           in Portugal. We also help with networking and finding the right local 
           partners for your success.
         </p>
-
-        <p><strong>Contact us today</strong> to learn more about our consultancy services.</p>
       </div>
     </section>
 
     <!-- Contact Form -->
-    <section class="contact-form">
+    <section class="newsletter">
       <div class="container">
         <h2>Tell us what you need</h2>
-        <form action="mailto:info@turluna.com" method="post" enctype="text/plain">
+        <form>
           <label for="name">Name</label>
           <input type="text" id="name" name="name" placeholder="Your name" required>
 
@@ -64,7 +64,7 @@
           <input type="email" id="email" name="email" placeholder="Your email" required>
 
           <label for="message">Message</label>
-          <textarea id="message" name="message" rows="5" placeholder="Tell us what you need..." required></textarea>
+          <textarea id="message" name="message" placeholder="Tell us what you need..." rows="5" required></textarea>
 
           <button type="submit">Send</button>
         </form>
