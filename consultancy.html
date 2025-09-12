@@ -1,34 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Turluna - Consultancy</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Consultancy — Turluna</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .lang-switch.flags{display:flex;gap:8px;align-items:center;margin-left:auto}
+    .lang-btn{width:32px;height:32px;border-radius:50%;border:1px solid #dcdcdc;background-size:cover;background-position:center;background-repeat:no-repeat;cursor:pointer;transition:transform .08s,box-shadow .08s;padding:0}
+    .lang-btn:hover{transform:translateY(-1px)}
+    .lang-btn.active{box-shadow:0 0 0 2px #111 inset}
+    nav a.break{white-space:normal!important;display:inline-block;text-align:center;line-height:1.15;width:92px}
+    @media (max-width:900px){nav a.break{width:auto}}
+
+    .page-wrap{max-width:1100px;margin:0 auto;padding:0 16px}
+    .page-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:32px;align-items:start}
+    .hero-img{width:100%;border-radius:10px;display:block}
+
+    .form-section{max-width:650px;margin:40px auto 0 auto;padding:0 8px}
+    .form-title{margin:0 0 8px 0;text-align:center}
+    .form-lead{margin:0 0 18px 0;text-align:center;color:#333}
+
+    h1{color:#006666;font-family:"Georgia",serif;font-size:2.2em}
+    h2{margin-top:1.2em;font-size:1.4em}
+
+    .contact-form{display:grid;gap:12px}
+    .row-two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .contact-form label{display:grid;gap:6px;font-weight:600}
+    .contact-form input,.contact-form textarea{padding:10px;border:1px solid #ddd;border-radius:6px;font:inherit}
+    .contact-form textarea{resize:vertical}
+    .contact-form button{padding:10px 14px;border:none;border-radius:8px;background:#0b5;color:#fff;cursor:pointer}
+    .contact-status{margin-top:8px}
+    .hp-field{display:none}
+  </style>
 </head>
 <body>
-  <!-- Header (same as Gastronomy) -->
-  <header>
-    <img src="img/logo.png" alt="Turluna Logo" class="logo">
+<header>
+  <div class="container">
     <nav>
+      <img src="logo.png.jpg" alt="Turluna logo" class="logo">
       <a href="index.html">About Us</a>
       <a href="holidays.html" class="break">Plan<br>Your Travel</a>
       <a href="health.html" class="break">Health<br>Tourism</a>
-      <a href="sport.html" class="break">Sport<br>Tourism</a>
+      <a href="sport.html"  class="break">Sport<br>Tourism</a>
       <a href="gastronomy.html">Gastronomy</a>
       <a href="consultancy.html" class="active">Consultancy</a>
+      <div class="lang-switch flags">
+        <button class="lang-btn" data-lang="en" onclick="egedoSetLang('en')" aria-label="English"   style="background-image:url('https://flagcdn.com/w40/gb.png');"></button>
+        <button class="lang-btn" data-lang="tr" onclick="egedoSetLang('tr')" aria-label="Türkçe"    style="background-image:url('https://flagcdn.com/w40/tr.png');"></button>
+        <button class="lang-btn" data-lang="pt" onclick="egedoSetLang('pt')" aria-label="Português" style="background-image:url('https://flagcdn.com/w40/pt.png');"></button>
+      </div>
     </nav>
-    <div class="language-switcher">
-      <a href="#"><img src="img/flag-uk.png" alt="English"></a>
-      <a href="#"><img src="img/flag-tr.png" alt="Türkçe"></a>
-      <a href="#"><img src="img/flag-pt.png" alt="Português"></a>
-    </div>
-  </header>
+  </div>
+</header>
 
-  <!-- Consultancy Content -->
-  <main>
-    <section class="intro">
-      <div class="container">
+<main class="page-wrap">
+  <section class="section">
+    <div class="page-grid">
+      <div>
         <h1>Consultancy Services</h1>
         <p>
           At Turluna, we not only create unforgettable travel experiences but also 
@@ -36,11 +65,7 @@
           planning a holiday, relocating, or expanding your business, our team is 
           here to guide you every step of the way.
         </p>
-      </div>
-    </section>
 
-    <section class="services">
-      <div class="container">
         <h2>Travel Consultancy</h2>
         <p>
           We assist with travel insurance, visa support, and tailor-made travel 
@@ -55,31 +80,48 @@
           partners for your success.
         </p>
       </div>
-    </section>
+      <div><img src="img/consultancy.png" alt="Consultancy services by Turluna" class="hero-img"></div>
+    </div>
 
-    <!-- Contact Form (same style as Gastronomy) -->
-    <section class="newsletter">
-      <div class="container">
-        <h2>Tell us what you need</h2>
-        <form>
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" placeholder="Your name" required>
+    <!-- FORM -->
+    <div class="form-section">
+      <h2 class="form-title">Tell us what you need</h2>
+      <p class="form-lead">Send us your request and we will get back to you as soon as possible.</p>
 
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="Your email" required>
+      <form id="consultancy-form" class="contact-form">
+        <div class="row-two">
+          <label><span>Name</span><input type="text" name="name" required></label>
+          <label><span>Email</span><input type="email" name="email" required></label>
+        </div>
+        <label><span>Message</span><textarea name="message" rows="5" required></textarea></label>
+        <input type="text" name="website" class="hp-field" autocomplete="off" tabindex="-1">
+        <button type="submit">Send</button>
+        <div id="contact-status" class="contact-status"></div>
+      </form>
+    </div>
+  </section>
+</main>
 
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="5" placeholder="Tell us what you need..." required></textarea>
+<footer>
+  <div class="container"><small>© Turluna 2025 — All rights reserved.</small></div>
+</footer>
 
-          <button type="submit">Send</button>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer (same as Gastronomy) -->
-  <footer>
-    <p>© Turluna 2025 — All rights reserved.</p>
-  </footer>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  const f=document.getElementById('consultancy-form'), s=document.getElementById('contact-status');
+  f.addEventListener('submit',async e=>{
+    e.preventDefault(); s.textContent='Sending...';
+    const fd=new FormData(f), payload=Object.fromEntries(fd.entries());
+    payload.message = `[Consultancy Request]\n\n` + (payload.message||'');
+    try{
+      const res=await fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+      const data=await res.json();
+      if(res.ok&&data.ok){ s.textContent='✓ Sent successfully. Thank you!'; f.reset(); }
+      else{ s.textContent='✗ Failed to submit. Please try again.'; }
+    }catch(_){ s.textContent='✗ Network error.'; }
+  });
+});
+</script>
+<script src="lang.js"></script>
 </body>
 </html>
