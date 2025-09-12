@@ -9,30 +9,19 @@ const translations = {
     },
     about: {
       title: "About Us",
-      intro: "Turluna Lda. is a Lisbon-based company founded by two Turkish entrepreneurs...",
+      intro: "Turluna Lda. is a Lisbon-based company founded by two Turkish entrepreneurs. With an innovative mindset, we work only with the best partners in every field we serve—keeping customer satisfaction consistently at the highest level. Our core lines of business are tourism, gastronomy, and consultancy.",
+
       tourism: "Tourism",
+      tourismText: "Turluna delivers a true 360-degree travel service. From air tickets, hotel stays, car rental, and private transfers to event tickets and museum/gallery admissions, we curate seamless journeys end-to-end. You receive competitive rates, attentive support, and premium quality—so your trip feels effortless from the very first plan to the final day.",
+
+      healthsport: "Health & Sports Tourism",
+      healthsportText: "We also design packages in health and sports tourism.",
+
       gastronomy: "Gastronomy",
-      consultancy: "Consultancy"
-    },
-    holidays: {
-      title: "Plan Your Travel",
-      intro: "At Turluna, we design truly 360-degree holidays...",
-      formTitle: "Plan with Turluna"
-    },
-    health: {
-      title: "Health Tourism",
-      intro: "With trusted medical partners and attentive trip planning...",
-      formTitle: "Get Health Info"
-    },
-    sport: {
-      title: "Sport Tourism",
-      intro: "At Turluna, we love bringing sport and travel together...",
-      formTitle: "Plan the camp for your team"
-    },
-    gastronomy: {
-      title: "Gastronomy",
-      intro: "We proudly showcase the rich flavors of Turkish cuisine...",
-      formTitle: "Subscribe to our newsletter"
+      gastronomyText: "We proudly showcase the rich flavors of Turkish cuisine through pop-up events at unique venues in Lisbon. From traditional breakfasts to refined dinners, we bring authentic taste with modern touches.",
+
+      consultancy: "Consultancy",
+      consultancyText: "We provide practical guidance on Portugal visas and company formation in Portugal. Whether you need help understanding the steps, preparing documents, or coordinating with local partners, our team can assist you from start to finish."
     },
     footer: "© Turluna 2025 — All rights reserved."
   },
@@ -47,30 +36,19 @@ const translations = {
     },
     about: {
       title: "Hakkımızda",
-      intro: "Turluna Lda., iki Türk girişimci tarafından Lizbon’da kurulmuş bir şirkettir...",
+      intro: "Turluna Lda., iki Türk girişimci tarafından Lizbon’da kurulmuş bir şirkettir. Yenilikçi bir bakış açısıyla, hizmet verdiğimiz her alanda yalnızca en iyi iş ortaklarıyla çalışıyoruz—müşteri memnuniyetini daima en üst seviyede tutuyoruz. Ana faaliyet alanlarımız turizm, gastronomi ve danışmanlıktır.",
+
       tourism: "Turizm",
+      tourismText: "Turluna size gerçek anlamda 360 derecelik bir seyahat hizmeti sunar. Uçak biletleri, otel konaklamaları, araç kiralama, özel transferler, etkinlik biletleri ve müze/galeri girişlerinden, baştan sona kusursuz yolculuklar tasarlarız. Rekabetçi fiyatlar, özenli destek ve yüksek kalite sunarak seyahatinizin ilk planlamadan son güne kadar sorunsuz geçmesini sağlarız.",
+
+      healthsport: "Sağlık ve Spor Turizmi",
+      healthsportText: "Sağlık ve spor turizmi alanlarında da paketler tasarlıyoruz.",
+
       gastronomy: "Gastronomi",
-      consultancy: "Danışmanlık"
-    },
-    holidays: {
-      title: "Seyahatini Planla",
-      intro: "Turluna olarak 360 derece tatil hizmeti sunuyoruz...",
-      formTitle: "Turluna ile Plan Yap"
-    },
-    health: {
-      title: "Sağlık Turizmi",
-      intro: "Güvenilir tıbbi iş ortaklarımızla ve titiz seyahat planlamamızla...",
-      formTitle: "Sağlık Bilgisi Al"
-    },
-    sport: {
-      title: "Spor Turizmi",
-      intro: "Turluna olarak sporla turizmi birleştirmekten keyif alıyoruz...",
-      formTitle: "Takımınız için kamp planlayın"
-    },
-    gastronomy: {
-      title: "Gastronomi",
-      intro: "Türk mutfağının zengin lezzetlerini gururla sunuyoruz...",
-      formTitle: "Bültenimize abone olun"
+      gastronomyText: "Lizbon’daki seçkin mekânlarda düzenlediğimiz pop-up etkinliklerle Türk mutfağının zengin lezzetlerini gururla sunuyoruz. Geleneksel kahvaltılardan özel akşam yemeklerine kadar, otantik tatları modern dokunuşlarla bir araya getiriyoruz.",
+
+      consultancy: "Danışmanlık",
+      consultancyText: "Portekiz vizeleri ve şirket kuruluşu konularında pratik rehberlik sağlıyoruz. Adımların anlaşılmasından belgelerin hazırlanmasına, yerel ortaklarla koordinasyona kadar sürecin her aşamasında size yardımcı oluyoruz."
     },
     footer: "© Turluna 2025 — Tüm hakları saklıdır."
   },
@@ -85,30 +63,19 @@ const translations = {
     },
     about: {
       title: "Sobre Nós",
-      intro: "A Turluna Lda. é uma empresa sediada em Lisboa fundada por dois empreendedores turcos...",
+      intro: "A Turluna Lda. é uma empresa sediada em Lisboa fundada por dois empreendedores turcos. Com uma mentalidade inovadora, trabalhamos apenas com os melhores parceiros em todas as áreas em que atuamos—mantendo a satisfação do cliente sempre no mais alto nível. Nossas principais áreas de atuação são turismo, gastronomia e consultoria.",
+
       tourism: "Turismo",
+      tourismText: "A Turluna oferece um verdadeiro serviço de viagens 360 graus. De passagens aéreas, estadias em hotéis, aluguel de carros e transfers privados a ingressos para eventos e entradas em museus/galerias, organizamos viagens completas de ponta a ponta. Você recebe tarifas competitivas, suporte atencioso e qualidade premium—para que sua viagem seja tranquila desde o primeiro planejamento até o último dia.",
+
+      healthsport: "Turismo de Saúde e Esporte",
+      healthsportText: "Também desenvolvemos pacotes de turismo de saúde e esportivo.",
+
       gastronomy: "Gastronomia",
-      consultancy: "Consultoria"
-    },
-    holidays: {
-      title: "Planeje Sua Viagem",
-      intro: "Na Turluna, oferecemos férias completas de 360 graus...",
-      formTitle: "Planeje com a Turluna"
-    },
-    health: {
-      title: "Turismo de Saúde",
-      intro: "Com parceiros médicos confiáveis e planejamento cuidadoso...",
-      formTitle: "Solicitar Informações"
-    },
-    sport: {
-      title: "Turismo Esportivo",
-      intro: "Na Turluna, adoramos unir esporte e turismo...",
-      formTitle: "Planeje o campo para sua equipe"
-    },
-    gastronomy: {
-      title: "Gastronomia",
-      intro: "Orgulhamo-nos de apresentar os sabores ricos da culinária turca...",
-      formTitle: "Inscreva-se na nossa newsletter"
+      gastronomyText: "Apresentamos com orgulho os ricos sabores da culinária turca através de eventos pop-up em locais únicos de Lisboa. De cafés da manhã tradicionais a jantares sofisticados, oferecemos um sabor autêntico com toques modernos.",
+
+      consultancy: "Consultoria",
+      consultancyText: "Fornecemos orientação prática sobre vistos para Portugal e constituição de empresas em Portugal. Quer precise de ajuda para compreender os passos, preparar documentos ou coordenar com parceiros locais, nossa equipe pode ajudá-lo do início ao fim."
     },
     footer: "© Turluna 2025 — Todos os direitos reservados."
   }
