@@ -51,56 +51,19 @@ const translations = {
       messageLabel: "Message",
       formButton: "Send"
     },
-sport: {
-  // --- ENGLISH ---
-  en: {
-    title: "Sport Tourism",
-    intro1: "At Turluna, we love bringing sport and travel together. For football and basketball—along with many other disciplines—we provide training camps in outstanding locations across both Türkiye and Portugal. Our programs are designed for all levels and can be scheduled year-round.",
-    intro2: "Beyond training sessions, we arrange friendly matches and tournaments, plus social and educational activities so athletes enjoy a complete experience on and off the field. We manage logistics end-to-end—facilities that match your sport, transportation and accommodation, pitch bookings, medical support and local coordination—so your team stays focused on performance.",
-    serviceTitle: "All-in service for teams",
-    serviceText: "On request, we can add video analysis, nutrition guidance, and cultural excursions to enrich your camp. Share your dates, team category and priorities; we’ll tailor a seamless program around them.",
-    formTitle: "Plan the camp for your team",
-    formLead: "Tell us what you need and we’ll build the right camp plan.",
-    nameLabel: "Name",
-    emailLabel: "Email",
-    branchLabel: "Sport branch",
-    messageLabel: "Message",
-    formButton: "Send"
-  },
-
-  // --- TURKISH ---
-  tr: {
-    title: "Spor Turizmi",
-    intro1: "Turluna olarak, sporu ve seyahati bir araya getirmekten keyif alıyoruz. Futbol ve basketbol başta olmak üzere birçok branş için Türkiye ve Portekiz’de üst düzey lokasyonlarda antrenman kampları sunuyoruz. Programlarımız her seviyeye uygundur ve yıl boyunca planlanabilir.",
-    intro2: "Antrenmanların ötesinde, hazırlık maçları ve turnuvalar düzenliyoruz; ayrıca sporcuların saha içinde ve dışında tam bir deneyim yaşamaları için sosyal ve eğitici aktiviteler sağlıyoruz. Tesislerden ulaşıma, konaklamadan saha rezervasyonlarına, sağlık desteğinden yerel koordinasyona kadar tüm lojistiği yönetiyoruz—böylece takımınız performansa odaklanır.",
-    serviceTitle: "Takımlar için her şey dahil hizmet",
-    serviceText: "Talep üzerine, kampınıza video analizi, beslenme rehberliği ve kültürel geziler de ekleyebiliriz. Tarihleri, takım kategorisini ve önceliklerinizi paylaşın; biz de bunlara göre kusursuz bir program tasarlayalım.",
-    formTitle: "Takımınız için kamp planlayın",
-    formLead: "Bize ihtiyacınızı söyleyin, doğru kamp planını oluşturalım.",
-    nameLabel: "İsim",
-    emailLabel: "E-posta",
-    branchLabel: "Spor branşı",
-    messageLabel: "Mesaj",
-    formButton: "Gönder"
-  },
-
-  // --- PORTUGUESE ---
-  pt: {
-    title: "Turismo Esportivo",
-    intro1: "Na Turluna, adoramos unir esporte e turismo. Para futebol e basquete—juntamente com muitas outras modalidades—oferecemos campos de treinamento em locais de excelência em Portugal e na Turquia. Nossos programas são projetados para todos os níveis e podem ser agendados ao longo do ano.",
-    intro2: "Além dos treinos, organizamos jogos amistosos e torneios, além de atividades sociais e educacionais para que os atletas tenham uma experiência completa dentro e fora do campo. Gerimos toda a logística—instalações adequadas ao seu esporte, transporte e hospedagem, reservas de campos, apoio médico e coordenação local—para que sua equipe permaneça focada no desempenho.",
-    serviceTitle: "Serviço completo para equipes",
-    serviceText: "A pedido, podemos adicionar análise de vídeo, orientação nutricional e excursões culturais para enriquecer seu campo. Partilhe suas datas, categoria da equipe e prioridades; adaptaremos um programa perfeito a elas.",
-    formTitle: "Planeje o campo para sua equipe",
-    formLead: "Diga-nos o que precisa e construiremos o plano certo.",
-    nameLabel: "Nome",
-    emailLabel: "E-mail",
-    branchLabel: "Modalidade esportiva",
-    messageLabel: "Mensagem",
-    formButton: "Enviar"
-  }
-},
-
+    sport: {
+      title: "Sport Tourism",
+      intro1: "At Turluna, we love bringing sport and travel together. For football and basketball—along with many other disciplines—we provide training camps in outstanding locations across both Türkiye and Portugal. Our programs are designed for all levels and can be scheduled year-round.",
+      intro2: "Beyond training sessions, we arrange friendly matches and tournaments, plus social and educational activities so athletes enjoy a complete experience on and off the field. We manage logistics end-to-end—facilities that match your sport, transportation and accommodation, pitch bookings, medical support and local coordination—so your team stays focused on performance.",
+      serviceTitle: "All-in service for teams",
+      serviceText: "On request, we can add video analysis, nutrition guidance, and cultural excursions to enrich your camp. Share your dates, team category and priorities; we’ll tailor a seamless program around them.",
+      formTitle: "Plan the camp for your team",
+      formLead: "Tell us what you need and we’ll build the right camp plan.",
+      nameLabel: "Name",
+      emailLabel: "Email",
+      branchLabel: "Sport branch",
+      messageLabel: "Message",
+      formButton: "Send"
     },
     gastronomy: {
       title: "Gastronomy",
