@@ -12,19 +12,15 @@
     .lang-btn.active{box-shadow:0 0 0 2px #111 inset}
     nav a.break{white-space:normal!important;display:inline-block;text-align:center;line-height:1.15;width:92px}
     @media (max-width:900px){nav a.break{width:auto}}
-
     .page-wrap{max-width:1100px;margin:0 auto;padding:0 16px}
     .page-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:32px;align-items:start}
     .hero-img{width:100%;border-radius:10px;display:block}
-
     .form-section{max-width:820px;margin:40px auto 0 auto;padding:0 8px}
     .form-title{margin:0 0 8px 0;text-align:center}
     .form-lead{margin:0 0 18px 0;text-align:center;color:#333}
-
     h1{color:#006666;font-family:"Georgia",serif;font-size:2.2em}
     h2{margin-top:1.2em;font-size:1.4em}
     h3{margin-top:.8em;font-size:1.15em}
-
     .contact-form{display:grid;gap:12px}
     .row-two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
     .contact-form label{display:grid;gap:6px;font-weight:600}
@@ -45,7 +41,7 @@
       <a href="index.html" data-i18n="nav.about">About Us</a>
       <a href="holidays.html" class="break" data-i18n="nav.holidays">Plan<br>Your Travel</a>
       <a href="health.html" class="break" data-i18n="nav.health">Health<br>Tourism</a>
-      <a href="sport.html" class="break" data-i18n="nav.sport">Sport<br>Tourism</a>
+      <a href="sport.html"  class="break" data-i18n="nav.sport">Sport<br>Tourism</a>
       <a href="gastronomy.html" data-i18n="nav.gastronomy">Gastronomy</a>
       <a href="consultancy.html" data-i18n="nav.consultancy">Consultancy</a>
       <div class="lang-switch flags">
@@ -59,7 +55,6 @@
 
 <main class="page-wrap">
   <section class="section">
-    <!-- ÜST: yazı + görsel -->
     <div class="page-grid">
       <div>
         <h1 data-i18n="holidays.title">Travels & Holidays</h1>
@@ -70,33 +65,34 @@
           We can enrich your plan with <strong>events</strong>, <strong>museum &amp; gallery entries</strong>, tastings and themed tours—always with trusted partners and clear itineraries.
           <strong>We also craft exceptional and "guided" city tours in Lisbon, Istanbul and Paris</strong>—designed for authentic local moments and memorable highlights.
         </p>
-        <h3 data-i18n="holidays.subTitle">All-in service, flexible by design</h3>
-        <p data-i18n="holidays.subText">Need a short city escape or a multi-country route? We tailor the trip around your dates, budget and interests.
-           You get competitive rates, transparent planning and reliable support—so you only focus on enjoying the journey.</p>
+        <h3 data-i18n="holidays.serviceTitle">All-in service, flexible by design</h3>
+        <p data-i18n="holidays.serviceText">
+          Need a short city escape or a multi-country route? We tailor the trip around your dates, budget and interests.
+          You get competitive rates, transparent planning and reliable support—so you only focus on enjoying the journey.
+        </p>
       </div>
       <div><img src="img/leisure.png" alt="Tailored holidays by Turluna" class="hero-img"></div>
     </div>
 
-    <!-- ORTA: FORM -->
     <div class="form-section">
       <h2 class="form-title" data-i18n="holidays.formTitle">Plan with Turluna</h2>
       <p class="form-lead" data-i18n="holidays.formLead">Tell us what you’re looking for and we’ll design a seamless itinerary.</p>
 
       <form id="contact-form" class="contact-form">
         <div class="row-two">
-          <label><span data-i18n="form.name">Name</span><input type="text" name="name" required></label>
-          <label><span data-i18n="form.email">Email</span><input type="email" name="email" required></label>
+          <label><span data-i18n="holidays.nameLabel">Name</span><input type="text" name="name" required></label>
+          <label><span data-i18n="holidays.emailLabel">Email</span><input type="email" name="email" required></label>
         </div>
 
         <label>
           <span data-i18n="holidays.serviceLabel">Type of service</span>
           <select name="service" required>
-            <option value="Accommodation" selected data-i18n="holidays.service.accommodation">Accommodation</option>
-            <option value="Transportation" data-i18n="holidays.service.transportation">Transportation (Flights/Trains/Buses)</option>
-            <option value="Transfer" data-i18n="holidays.service.transfer">Transfer (Private/Shared)</option>
-            <option value="Rent a Car" data-i18n="holidays.service.rent">Rent a Car</option>
-            <option value="Museums & Galleries" data-i18n="holidays.service.museums">Museums &amp; Galleries</option>
-            <option value="Events" data-i18n="holidays.service.events">Events</option>
+            <option value="Accommodation">Accommodation</option>
+            <option value="Transportation">Transportation (Flights/Trains/Buses)</option>
+            <option value="Transfer">Transfer (Private/Shared)</option>
+            <option value="Rent a Car">Rent a Car</option>
+            <option value="Museums & Galleries">Museums &amp; Galleries</option>
+            <option value="Events">Events</option>
           </select>
         </label>
 
@@ -115,12 +111,12 @@
           </datalist>
         </label>
 
-        <label><span data-i18n="form.message">Message</span>
+        <label><span data-i18n="holidays.messageLabel">Message</span>
           <textarea name="message" rows="6" placeholder="Dates, number of guests, special interests…" required></textarea>
         </label>
 
         <input type="text" name="website" class="hp-field" autocomplete="off" tabindex="-1">
-        <button type="submit" data-i18n="form.send">Send</button>
+        <button type="submit" data-i18n="holidays.formButton">Send</button>
         <div id="contact-status" class="contact-status"></div>
       </form>
     </div>
@@ -131,23 +127,6 @@
   <div class="container"><small data-i18n="footer">© Turluna 2025 — All rights reserved.</small></div>
 </footer>
 
-<script>
-document.addEventListener('DOMContentLoaded',function(){
-  const f=document.getElementById('contact-form'), s=document.getElementById('contact-status');
-  f.addEventListener('submit',async e=>{
-    e.preventDefault(); s.textContent='Sending...';
-    const fd=new FormData(f), payload=Object.fromEntries(fd.entries());
-    const service = payload.service || 'N/A', location = payload.location || 'N/A';
-    payload.message = `[Service: ${service}] [Location: ${location}]\n\n` + (payload.message||'');
-    try{
-      const res=await fetch('/api/contact',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
-      const data=await res.json();
-      if(res.ok&&data.ok){ s.textContent='✓ Your message was sent. Thank you.'; f.reset(); }
-      else{ s.textContent='✗ Failed to send. Please try again.'; }
-    }catch(_){ s.textContent='✗ Network error.'; }
-  });
-});
-</script>
 <script src="lang.js"></script>
 </body>
 </html>
