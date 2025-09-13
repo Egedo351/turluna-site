@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Travels & Holidays — Turluna</title>
+  <title data-i18n="holidays.title">Travels & Holidays — Turluna</title>
   <link rel="stylesheet" href="style.css">
   <style>
     .lang-switch.flags{display:flex;gap:8px;align-items:center;margin-left:auto}
@@ -42,12 +42,12 @@
   <div class="container">
     <nav>
       <img src="logo.png.jpg" alt="Turluna logo" class="logo">
-      <a href="index.html">About Us</a>
-      <a href="holidays.html" class="break">Plan<br>Your Travel</a>
-      <a href="health.html" class="break">Health<br>Tourism</a>
-      <a href="sport.html"  class="break">Sport<br>Tourism</a>
-      <a href="gastronomy.html">Gastronomy</a>
-      <a href="consultancy.html">Consultancy</a>
+      <a href="index.html" data-i18n="nav.about">About Us</a>
+      <a href="holidays.html" class="break" data-i18n="nav.holidays">Plan<br>Your Travel</a>
+      <a href="health.html" class="break" data-i18n="nav.health">Health<br>Tourism</a>
+      <a href="sport.html" class="break" data-i18n="nav.sport">Sport<br>Tourism</a>
+      <a href="gastronomy.html" data-i18n="nav.gastronomy">Gastronomy</a>
+      <a href="consultancy.html" data-i18n="nav.consultancy">Consultancy</a>
       <div class="lang-switch flags">
         <button class="lang-btn" data-lang="en" onclick="egedoSetLang('en')" aria-label="English"   style="background-image:url('https://flagcdn.com/w40/gb.png');"></button>
         <button class="lang-btn" data-lang="tr" onclick="egedoSetLang('tr')" aria-label="Türkçe"    style="background-image:url('https://flagcdn.com/w40/tr.png');"></button>
@@ -62,16 +62,16 @@
     <!-- ÜST: yazı + görsel -->
     <div class="page-grid">
       <div>
-        <h1>Travels & Holidays</h1>
-        <p>
+        <h1 data-i18n="holidays.title">Travels & Holidays</h1>
+        <p data-i18n="holidays.intro">
           At <strong>Turluna</strong>, we design truly <strong>360-degree</strong> holidays. From <strong>accommodation</strong> and <strong>flights</strong> to
           <strong>private transfers</strong>, and curated add-ons, your journey is managed end-to-end.
           During your trip, our <strong>24/7 customer care</strong> is one call away—so any disruption is handled quickly and your experience stays smooth.
           We can enrich your plan with <strong>events</strong>, <strong>museum &amp; gallery entries</strong>, tastings and themed tours—always with trusted partners and clear itineraries.
           <strong>We also craft exceptional and "guided" city tours in Lisbon, Istanbul and Paris</strong>—designed for authentic local moments and memorable highlights.
         </p>
-        <h3>All-in service, flexible by design</h3>
-        <p>Need a short city escape or a multi-country route? We tailor the trip around your dates, budget and interests.
+        <h3 data-i18n="holidays.subTitle">All-in service, flexible by design</h3>
+        <p data-i18n="holidays.subText">Need a short city escape or a multi-country route? We tailor the trip around your dates, budget and interests.
            You get competitive rates, transparent planning and reliable support—so you only focus on enjoying the journey.</p>
       </div>
       <div><img src="img/leisure.png" alt="Tailored holidays by Turluna" class="hero-img"></div>
@@ -79,29 +79,29 @@
 
     <!-- ORTA: FORM -->
     <div class="form-section">
-      <h2 class="form-title">Plan with Turluna</h2>
-      <p class="form-lead">Tell us what you’re looking for and we’ll design a seamless itinerary.</p>
+      <h2 class="form-title" data-i18n="holidays.formTitle">Plan with Turluna</h2>
+      <p class="form-lead" data-i18n="holidays.formLead">Tell us what you’re looking for and we’ll design a seamless itinerary.</p>
 
       <form id="contact-form" class="contact-form">
         <div class="row-two">
-          <label><span>Name</span><input type="text" name="name" required></label>
-          <label><span>Email</span><input type="email" name="email" required></label>
+          <label><span data-i18n="form.name">Name</span><input type="text" name="name" required></label>
+          <label><span data-i18n="form.email">Email</span><input type="email" name="email" required></label>
         </div>
 
         <label>
-          <span>Type of service</span>
+          <span data-i18n="holidays.serviceLabel">Type of service</span>
           <select name="service" required>
-            <option value="Accommodation" selected>Accommodation</option>
-            <option value="Transportation">Transportation (Flights/Trains/Buses)</option>
-            <option value="Transfer">Transfer (Private/Shared)</option>
-            <option value="Rent a Car">Rent a Car</option>
-            <option value="Museums & Galleries">Museums &amp; Galleries</option>
-            <option value="Events">Events</option>
+            <option value="Accommodation" selected data-i18n="holidays.service.accommodation">Accommodation</option>
+            <option value="Transportation" data-i18n="holidays.service.transportation">Transportation (Flights/Trains/Buses)</option>
+            <option value="Transfer" data-i18n="holidays.service.transfer">Transfer (Private/Shared)</option>
+            <option value="Rent a Car" data-i18n="holidays.service.rent">Rent a Car</option>
+            <option value="Museums & Galleries" data-i18n="holidays.service.museums">Museums &amp; Galleries</option>
+            <option value="Events" data-i18n="holidays.service.events">Events</option>
           </select>
         </label>
 
         <label>
-          <span>Location</span>
+          <span data-i18n="holidays.locationLabel">Location</span>
           <input type="text" name="location" list="countries" placeholder="e.g., Portugal, UK, Türkiye" required>
           <datalist id="countries">
             <option>Portugal</option><option>United Kingdom</option><option>France</option><option>Spain</option>
@@ -115,12 +115,12 @@
           </datalist>
         </label>
 
-        <label><span>Message</span>
+        <label><span data-i18n="form.message">Message</span>
           <textarea name="message" rows="6" placeholder="Dates, number of guests, special interests…" required></textarea>
         </label>
 
         <input type="text" name="website" class="hp-field" autocomplete="off" tabindex="-1">
-        <button type="submit">Send</button>
+        <button type="submit" data-i18n="form.send">Send</button>
         <div id="contact-status" class="contact-status"></div>
       </form>
     </div>
@@ -128,7 +128,7 @@
 </main>
 
 <footer>
-  <div class="container"><small>© Turluna 2025 — All rights reserved.</small></div>
+  <div class="container"><small data-i18n="footer">© Turluna 2025 — All rights reserved.</small></div>
 </footer>
 
 <script>
