@@ -39,12 +39,12 @@
   <div class="container">
     <nav>
       <img src="logo.png.jpg" alt="Turluna logo" class="logo">
-      <a href="index.html">About Us</a>
-      <a href="holidays.html" class="break">Plan<br>Your Travel</a>
-      <a href="health.html" class="break">Health<br>Tourism</a>
-      <a href="sport.html"  class="break">Sport<br>Tourism</a>
-      <a href="gastronomy.html">Gastronomy</a>
-      <a href="consultancy.html" class="active">Consultancy</a>
+      <a href="index.html" data-i18n="nav.about"></a>
+      <a href="holidays.html" class="break" data-i18n="nav.holidays"></a>
+      <a href="health.html" class="break" data-i18n="nav.health"></a>
+      <a href="sport.html"  class="break" data-i18n="nav.sport"></a>
+      <a href="gastronomy.html" data-i18n="nav.gastronomy"></a>
+      <a href="consultancy.html" class="active" data-i18n="nav.consultancy"></a>
       <div class="lang-switch flags">
         <button class="lang-btn" data-lang="en" onclick="egedoSetLang('en')" aria-label="English"   style="background-image:url('https://flagcdn.com/w40/gb.png');"></button>
         <button class="lang-btn" data-lang="tr" onclick="egedoSetLang('tr')" aria-label="Türkçe"    style="background-image:url('https://flagcdn.com/w40/tr.png');"></button>
@@ -58,35 +58,24 @@
   <section class="section">
     <div class="page-grid">
       <div>
-        <h1>Consultancy Services</h1>
-        <p>
-          At Turluna, we not only create unforgettable travel experiences but also 
-          provide consultancy services tailored to your needs. Whether you are 
-          planning a holiday, relocating, or expanding your business, our team is 
-          here to guide you every step of the way.
-        </p>
+        <h1 data-i18n="consultancy.title"></h1>
+        <p data-i18n="consultancy.intro"></p>
 
-        <h2>Travel Consultancy</h2>
-        <p>
-          We assist with travel insurance, visa support, and tailor-made travel 
-          solutions designed to make your journey stress-free and enjoyable.
-        </p>
+        <h2 data-i18n="consultancy.travelTitle"></h2>
+        <p data-i18n="consultancy.travelText"></p>
 
-        <h2>Business & Relocation Consultancy</h2>
-        <p>
-          From visa and residency guidance to company formation and compliance, 
-          we support individuals and businesses looking to establish themselves 
-          in Portugal. We also help with networking and finding the right local 
-          partners for your success.
-        </p>
+        <h2 data-i18n="consultancy.businessTitle"></h2>
+        <p data-i18n="consultancy.businessText"></p>
       </div>
-      <div><img src="img/consultancy.png" alt="Consultancy services by Turluna" class="hero-img"></div>
+      <div>
+        <img src="img/consultancy.png" alt="Consultancy services by Turluna" class="hero-img">
+      </div>
     </div>
 
     <!-- FORM -->
     <div class="form-section">
-      <h2 class="form-title">Tell us what you need</h2>
-      <p class="form-lead">Send us your request and we will get back to you as soon as possible.</p>
+      <h2 class="form-title" data-i18n="consultancy.formTitle"></h2>
+      <p class="form-lead" data-i18n="consultancy.formLead"></p>
 
       <form id="consultancy-form" class="contact-form">
         <div class="row-two">
@@ -95,7 +84,7 @@
         </div>
         <label><span>Message</span><textarea name="message" rows="5" required></textarea></label>
         <input type="text" name="website" class="hp-field" autocomplete="off" tabindex="-1">
-        <button type="submit">Send</button>
+        <button type="submit" data-i18n="consultancy.formButton"></button>
         <div id="contact-status" class="contact-status"></div>
       </form>
     </div>
@@ -103,7 +92,7 @@
 </main>
 
 <footer>
-  <div class="container"><small>© Turluna 2025 — All rights reserved.</small></div>
+  <div class="container"><small data-i18n="footer"></small></div>
 </footer>
 
 <script>
