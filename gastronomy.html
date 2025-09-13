@@ -12,18 +12,14 @@
     .lang-btn.active{box-shadow:0 0 0 2px #111 inset}
     nav a.break{white-space:normal!important;display:inline-block;text-align:center;line-height:1.15;width:92px}
     @media (max-width:900px){nav a.break{width:auto}}
-
     .page-wrap{max-width:1100px;margin:0 auto;padding:0 16px}
     .page-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:32px;align-items:start}
     .hero-img{width:100%;border-radius:10px;display:block}
-
     .form-section{max-width:650px;margin:40px auto 0 auto;padding:0 8px}
     .form-title{margin:0 0 8px 0;text-align:center}
     .form-lead{margin:0 0 18px 0;text-align:center;color:#333}
-
     h1{color:#006666;font-family:"Georgia",serif;font-size:2.2em}
     h2{margin-top:1.2em;font-size:1.4em}
-
     .contact-form{display:grid;gap:12px}
     .row-two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
     .contact-form label{display:grid;gap:6px;font-weight:600}
@@ -41,7 +37,7 @@
       <a href="index.html" data-i18n="nav.about">About Us</a>
       <a href="holidays.html" class="break" data-i18n="nav.holidays">Plan<br>Your Travel</a>
       <a href="health.html" class="break" data-i18n="nav.health">Health<br>Tourism</a>
-      <a href="sport.html"  class="break" data-i18n="nav.sport">Sport<br>Tourism</a>
+      <a href="sport.html" class="break" data-i18n="nav.sport">Sport<br>Tourism</a>
       <a href="gastronomy.html" data-i18n="nav.gastronomy">Gastronomy</a>
       <a href="consultancy.html" data-i18n="nav.consultancy">Consultancy</a>
       <div class="lang-switch flags">
@@ -58,11 +54,15 @@
     <div class="page-grid">
       <div>
         <h1 data-i18n="gastronomy.title">Gastronomy</h1>
-        <p data-i18n="gastronomy.intro1">We proudly showcase the rich flavors of Turkish cuisine through pop-up events at unique venues in Lisbon.
-           From traditional breakfasts to refined dinners, we bring authentic taste with modern touches. Our menus are
-           curated with seasonal ingredients and presented with warm hospitality—so every event feels memorable and welcoming.</p>
-        <h2 data-i18n="gastronomy.eventsTitle">Pop-up tastings &amp; private events</h2>
-        <p data-i18n="gastronomy.eventsText">We host curated tastings, themed nights, and special collaborations. Keep track of our calendar so you can secure your spot early.</p>
+        <p data-i18n="gastronomy.intro">
+          We proudly showcase the rich flavors of Turkish cuisine through pop-up events at unique venues in Lisbon.
+          From traditional breakfasts to refined dinners, we bring authentic taste with modern touches.
+          Our menus are curated with seasonal ingredients and presented with warm hospitality—so every event feels memorable and welcoming.
+        </p>
+        <h2 data-i18n="gastronomy.tastingsTitle">Pop-up tastings & private events</h2>
+        <p data-i18n="gastronomy.tastingsText">
+          We host curated tastings, themed nights, and special collaborations. Keep track of our calendar so you can secure your spot early.
+        </p>
       </div>
       <div><img src="img/gastronomy.png" alt="Gastronomy events by Turluna" class="hero-img"></div>
     </div>
@@ -73,11 +73,11 @@
 
       <form id="newsletter-form" class="contact-form">
         <div class="row-two">
-          <label><span data-i18n="form.name">Name</span><input type="text" name="name" required></label>
-          <label><span data-i18n="form.email">Email</span><input type="email" name="email" required></label>
+          <label><span data-i18n="gastronomy.nameLabel">Name</span><input type="text" name="name" required></label>
+          <label><span data-i18n="gastronomy.emailLabel">Email</span><input type="email" name="email" required></label>
         </div>
         <input type="text" name="website" class="hp-field" autocomplete="off" tabindex="-1">
-        <button type="submit" data-i18n="form.subscribe">Subscribe</button>
+        <button type="submit" data-i18n="gastronomy.formButton">Subscribe</button>
         <div id="contact-status" class="contact-status"></div>
       </form>
     </div>
