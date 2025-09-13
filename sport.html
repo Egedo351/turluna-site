@@ -10,31 +10,17 @@
     .lang-btn{width:32px;height:32px;border-radius:50%;border:1px solid #dcdcdc;background-size:cover;background-position:center;background-repeat:no-repeat;cursor:pointer;transition:transform .08s,box-shadow .08s;padding:0}
     .lang-btn:hover{transform:translateY(-1px)}
     .lang-btn.active{box-shadow:0 0 0 2px #111 inset}
-
-    nav a.break{
-      white-space: normal !important;
-      display: inline-block;
-      text-align: center;
-      line-height: 1.15;
-      width: 92px;
-    }
-    @media (max-width: 900px){
-      nav a.break{ width:auto; }
-    }
-
+    nav a.break{white-space:normal!important;display:inline-block;text-align:center;line-height:1.15;width:92px}
+    @media (max-width:900px){nav a.break{width:auto}}
     .page-wrap{max-width:1100px;margin:0 auto;padding:0 16px}
     .page-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:32px;align-items:start}
     .hero-img{width:100%;border-radius:10px;display:block}
-
     .form-section{max-width:820px;margin:40px auto 0 auto;padding:0 8px}
-    .form-card{background:transparent}
     .form-title{margin:0 0 8px 0;text-align:center}
     .form-lead{margin:0 0 18px 0;text-align:center;color:#333}
-
     h1{color:#006666;font-family:"Georgia",serif;font-size:2.2em}
     h2{margin-top:1.2em;font-size:1.4em}
     h3{margin-top:.8em;font-size:1.15em}
-
     .contact-form{display:grid;gap:12px}
     .row-two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
     .contact-form label{display:grid;gap:6px;font-weight:600}
@@ -45,13 +31,6 @@
     .contact-form button{padding:10px 14px;border:none;border-radius:8px;background:#0b5;color:#fff;cursor:pointer}
     .contact-status{margin-top:8px}
     .hp-field{display:none}
-
-    @media (max-width:900px){
-      .page-grid{grid-template-columns:1fr}
-    }
-    @media (max-width:640px){
-      .row-two{grid-template-columns:1fr}
-    }
   </style>
 </head>
 <body>
@@ -59,14 +38,12 @@
   <div class="container">
     <nav>
       <img src="logo.png.jpg" alt="Turluna logo" class="logo">
-
       <a href="index.html" data-i18n="nav.about">About Us</a>
       <a href="holidays.html" class="break" data-i18n="nav.holidays">Plan<br>Your Travel</a>
       <a href="health.html" class="break" data-i18n="nav.health">Health<br>Tourism</a>
       <a href="sport.html" class="break" data-i18n="nav.sport">Sport<br>Tourism</a>
       <a href="gastronomy.html" data-i18n="nav.gastronomy">Gastronomy</a>
       <a href="consultancy.html" data-i18n="nav.consultancy">Consultancy</a>
-
       <div class="lang-switch flags">
         <button class="lang-btn" data-lang="en" onclick="egedoSetLang('en')" aria-label="English"   style="background-image:url('https://flagcdn.com/w40/gb.png');"></button>
         <button class="lang-btn" data-lang="tr" onclick="egedoSetLang('tr')" aria-label="Türkçe"    style="background-image:url('https://flagcdn.com/w40/tr.png');"></button>
@@ -81,107 +58,51 @@
     <div class="page-grid">
       <div>
         <h1 data-i18n="sport.title">Sport Tourism</h1>
-
-        <p data-i18n="sport.intro1">At <strong>Turluna</strong>, we love bringing sport and travel together. For football and basketball—along with many
-          other disciplines—we provide <strong>training camps</strong> in outstanding locations across both Türkiye and Portugal.
-          Our programs are designed for all levels and can be scheduled <strong>year-round</strong>.</p>
-
-        <p data-i18n="sport.intro2">Beyond training sessions, we arrange <strong>friendly matches and tournaments</strong>, plus social and educational
-          activities so athletes enjoy a complete experience on and off the field. We manage logistics end-to-end—facilities
-          that match your sport, transportation and accommodation, pitch bookings, medical support and local coordination—
-          so your team stays focused on performance.</p>
-
-        <h3 data-i18n="sport.subTitle">All-in service for teams</h3>
-        <p data-i18n="sport.subText">On request, we can add video analysis, nutrition guidance, and cultural excursions to enrich your camp. Share your
-          dates, team category and priorities; we’ll tailor a seamless program around them.</p>
+        <p data-i18n="sport.intro1">
+          At <strong>Turluna</strong>, we love bringing sport and travel together. For <strong>football</strong> and <strong>basketball</strong>—along with many other disciplines—we provide <strong>training camps</strong> in outstanding locations across both Türkiye and Portugal. Our programs are designed for all levels and can be scheduled year-round.
+        </p>
+        <p data-i18n="sport.intro2">
+          Beyond training sessions, we arrange <strong>friendly matches</strong> and <strong>tournaments</strong>, plus <strong>social and educational activities</strong> so athletes enjoy a complete experience on and off the field. We manage logistics end-to-end—facilities that match your sport, transportation and accommodation, pitch bookings, medical support and local coordination—so your team stays focused on performance.
+        </p>
+        <h3 data-i18n="sport.serviceTitle">All-in service for teams</h3>
+        <p data-i18n="sport.serviceText">
+          On request, we can add <strong>video analysis</strong>, <strong>nutrition guidance</strong>, and <strong>cultural excursions</strong> to enrich your camp. Share your dates, team category and priorities; we’ll tailor a seamless program around them.
+        </p>
       </div>
-
-      <div>
-        <img src="img/sport.png" alt="Team training camps by Turluna" class="hero-img">
-      </div>
+      <div><img src="img/sport.png" alt="Sport tourism programs by Turluna" class="hero-img"></div>
     </div>
 
     <div class="form-section">
-      <div class="form-card">
-        <h2 class="form-title" data-i18n="sport.formTitle">Plan the camp for your team</h2>
-        <p class="form-lead" data-i18n="sport.formLead">Tell us what you need and we’ll build the right camp plan.</p>
+      <h2 class="form-title" data-i18n="sport.formTitle">Plan the camp for your team</h2>
+      <p class="form-lead" data-i18n="sport.formLead">Tell us what you need and we’ll build the right camp plan.</p>
 
-        <form id="contact-form" class="contact-form">
-          <div class="row-two">
-            <label>
-              <span data-i18n="form.name">Name</span>
-              <input type="text" name="name" required>
-            </label>
-            <label>
-              <span data-i18n="form.email">Email</span>
-              <input type="email" name="email" required>
-            </label>
-          </div>
+      <form id="contact-form" class="contact-form">
+        <div class="row-two">
+          <label><span data-i18n="sport.nameLabel">Name</span><input type="text" name="name" required></label>
+          <label><span data-i18n="sport.emailLabel">Email</span><input type="email" name="email" required></label>
+        </div>
 
-          <label>
-            <span data-i18n="sport.branchLabel">Sport branch</span>
-            <select name="service" required>
-              <option value="Football" selected data-i18n="sport.branch.football">Football</option>
-              <option value="Basketball" data-i18n="sport.branch.basketball">Basketball</option>
-              <option value="Volleyball" data-i18n="sport.branch.volleyball">Volleyball</option>
-              <option value="Other" data-i18n="sport.branch.other">Other</option>
-            </select>
-          </label>
+        <label>
+          <span data-i18n="sport.branchLabel">Sport branch</span>
+          <input type="text" name="branch" required>
+        </label>
 
-          <label>
-            <span data-i18n="form.message">Message</span>
-            <textarea name="message" placeholder="Dates, team category, headcount, desired services…" required></textarea>
-          </label>
+        <label><span data-i18n="sport.messageLabel">Message</span>
+          <textarea name="message" rows="6" placeholder="Dates, team category, training needs…" required></textarea>
+        </label>
 
-          <input type="text" name="website" class="hp-field" autocomplete="off" tabindex="-1">
-
-          <button type="submit" data-i18n="form.send">Send</button>
-          <div id="contact-status" class="contact-status"></div>
-        </form>
-      </div>
+        <input type="text" name="website" class="hp-field" autocomplete="off" tabindex="-1">
+        <button type="submit" data-i18n="sport.formButton">Send</button>
+        <div id="contact-status" class="contact-status"></div>
+      </form>
     </div>
   </section>
 </main>
 
 <footer>
-  <div class="container">
-    <small data-i18n="footer">© Turluna 2025 — All rights reserved.</small>
-  </div>
+  <div class="container"><small data-i18n="footer">© Turluna 2025 — All rights reserved.</small></div>
 </footer>
 
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('contact-form');
-    const status = document.getElementById('contact-status');
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      status.textContent = 'Sending...';
-
-      const fd = new FormData(form);
-      const payload = Object.fromEntries(fd.entries());
-      const branch = payload.service || 'N/A';
-      payload.message = `[Branch: ${branch}]\n\n` + (payload.message || '');
-
-      try {
-        const res = await fetch('/api/contact', {
-          method: 'POST',
-          headers: {'Content-Type':'application/json'},
-          body: JSON.stringify(payload)
-        });
-        const data = await res.json();
-        if (res.ok && data.ok) {
-          status.textContent = '✓ Your message was sent. Thank you.';
-          form.reset();
-        } else {
-          status.textContent = '✗ Failed to send. Please try again.';
-        }
-      } catch (err) {
-        status.textContent = '✗ Network error.';
-      }
-    });
-  });
-</script>
 <script src="lang.js"></script>
 </body>
 </html>
