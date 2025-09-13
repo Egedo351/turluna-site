@@ -42,12 +42,12 @@
   <div class="container">
     <nav>
       <img src="logo.png.jpg" alt="Turluna logo" class="logo">
-      <a href="index.html">About Us</a>
-      <a href="holidays.html" class="break">Plan<br>Your Travel</a>
-      <a href="health.html" class="break">Health<br>Tourism</a>
-      <a href="sport.html"  class="break">Sport<br>Tourism</a>
-      <a href="gastronomy.html">Gastronomy</a>
-      <a href="consultancy.html">Consultancy</a>
+      <a href="index.html" data-i18n="nav.about"></a>
+      <a href="holidays.html" class="break" data-i18n="nav.holidays"></a>
+      <a href="health.html" class="break" data-i18n="nav.health"></a>
+      <a href="sport.html"  class="break" data-i18n="nav.sport"></a>
+      <a href="gastronomy.html" data-i18n="nav.gastronomy"></a>
+      <a href="consultancy.html" data-i18n="nav.consultancy"></a>
       <div class="lang-switch flags">
         <button class="lang-btn" data-lang="en" onclick="egedoSetLang('en')" aria-label="English"   style="background-image:url('https://flagcdn.com/w40/gb.png');"></button>
         <button class="lang-btn" data-lang="tr" onclick="egedoSetLang('tr')" aria-label="Türkçe"    style="background-image:url('https://flagcdn.com/w40/tr.png');"></button>
@@ -61,22 +61,22 @@
   <section class="section">
     <div class="page-grid">
       <div>
-        <h1>Health Tourism</h1>
-        <p>With trusted medical partners and attentive trip planning, we design health-focused journeys that combine excellent care with a smooth travel experience.</p>
-        <h3>Hair Transplant</h3>
-        <p>We collaborate with expert partner clinics in Istanbul, Antalya and Bursa—offering personalized plans, hygienic facilities and transparent aftercare.</p>
-        <h3>Orthodontics & Smile Design</h3>
-        <p>With clinic partners in Istanbul, we provide comprehensive diagnosis, treatment planning and aesthetic-driven restorations—from aligners to advanced cosmetic dentistry.</p>
-        <h3>Physiotherapy</h3>
-        <p>In Ayvalık, away from city intensity, we offer one-to-one therapy immersed in nature and by the sea—while following a program tailored to your recovery and mobility goals.</p>
+        <h1 data-i18n="health.title"></h1>
+        <p data-i18n="health.intro"></p>
+        <h3 data-i18n="health.hairTitle"></h3>
+        <p data-i18n="health.hairText"></p>
+        <h3 data-i18n="health.orthoTitle"></h3>
+        <p data-i18n="health.orthoText"></p>
+        <h3 data-i18n="health.physioTitle"></h3>
+        <p data-i18n="health.physioText"></p>
       </div>
       <div><img src="img/health.png" alt="Health Tourism with Turluna" class="hero-img"></div>
     </div>
 
     <!-- ORTA: FORM -->
     <div class="form-section">
-      <h2 class="form-title">Tell us about your needs</h2>
-      <p class="form-lead">Pick a service and share your details—we’ll arrange the right plan.</p>
+      <h2 class="form-title" data-i18n="health.formTitle"></h2>
+      <p class="form-lead" data-i18n="health.formLead"></p>
 
       <form id="contact-form" class="contact-form">
         <div class="row-two">
@@ -85,20 +85,20 @@
         </div>
 
         <label>
-          <span>Service</span>
+          <span data-i18n="health.serviceLabel"></span>
           <select name="service" required>
-            <option value="Hair Transplant" selected>Hair Transplant</option>
-            <option value="Orthodontics & Smile Design">Orthodontics & Smile Design</option>
-            <option value="Physiotherapy">Physiotherapy</option>
+            <option value="Hair Transplant" data-i18n="health.hairTitle"></option>
+            <option value="Orthodontics & Smile Design" data-i18n="health.orthoTitle"></option>
+            <option value="Physiotherapy" data-i18n="health.physioTitle"></option>
           </select>
         </label>
 
-        <label><span>Message</span>
+        <label><span data-i18n="health.messageLabel"></span>
           <textarea name="message" placeholder="Dates, medical notes, preferred city, expectations…" required></textarea>
         </label>
 
         <input type="text" name="website" class="hp-field" autocomplete="off" tabindex="-1">
-        <button type="submit">Send</button>
+        <button type="submit" data-i18n="health.formButton"></button>
         <div id="contact-status" class="contact-status"></div>
       </form>
     </div>
@@ -106,7 +106,7 @@
 </main>
 
 <footer>
-  <div class="container"><small>© Turluna 2025 — All rights reserved.</small></div>
+  <div class="container"><small data-i18n="footer"></small></div>
 </footer>
 
 <script>
