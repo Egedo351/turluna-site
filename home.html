@@ -14,13 +14,24 @@
       scroll-snap-type: x mandatory;
       padding: 20px;
     }
-    .slider img {
+    .slide {
+      flex: 0 0 auto;
+      text-align: center;
       width: 320px;
+      scroll-snap-align: center;
+    }
+    .slide img {
+      width: 100%;
       height: 200px;
       border-radius: 10px;
       object-fit: cover;
-      scroll-snap-align: center;
       cursor: pointer;
+    }
+    .slide p {
+      margin-top: 8px;
+      font-size: 14px;
+      color: #333;
+      font-weight: 500;
     }
     .slider::-webkit-scrollbar {
       height: 10px;
@@ -46,6 +57,28 @@
       height: 50px;
       object-fit: contain;
     }
+
+    /* Lang buttons same size as other pages */
+    .lang-switch.flags {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      margin-left: auto;
+    }
+    .lang-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1px solid #dcdcdc;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      cursor: pointer;
+      transition: transform .08s, box-shadow .08s;
+      padding: 0;
+    }
+    .lang-btn:hover { transform: translateY(-1px); }
+    .lang-btn.active { box-shadow: 0 0 0 2px #111 inset; }
   </style>
 </head>
 <body>
@@ -72,11 +105,26 @@
 <main>
   <!-- SLIDER -->
   <section class="slider">
-    <a href="holidays.html#form"><img src="img/paris-lisbon-istanbul.png" alt="Paris-Lisbon-Istanbul Tour"></a>
-    <a href="consultancy.html#form"><img src="img/corporate-travel.png" alt="Corporate Travel Services"></a>
-    <a href="holidays.html#form"><img src="img/cruise.png" alt="Cruise Tours"></a>
-    <a href="holidays.html#form"><img src="img/rent-car.png" alt="Rent a Car"></a>
-    <a href="health.html#form"><img src="img/hair-transplant.png" alt="Hair Transplant in Türkiye"></a>
+    <div class="slide">
+      <a href="holidays.html#form"><img src="img/paris-lisbon-istanbul.png" alt="Paris-Lisbon-Istanbul Tour"></a>
+      <p>Personalized, guided city tours</p>
+    </div>
+    <div class="slide">
+      <a href="consultancy.html#form"><img src="img/corporate-travel.png" alt="Corporate Travel Services"></a>
+      <p>Professional support for corporate travel</p>
+    </div>
+    <div class="slide">
+      <a href="holidays.html#form"><img src="img/cruise.png" alt="Cruise Tours"></a>
+      <p>Unique cruise experiences</p>
+    </div>
+    <div class="slide">
+      <a href="holidays.html#form"><img src="img/rent-car.png" alt="Rent a Car"></a>
+      <p>Rent a car</p>
+    </div>
+    <div class="slide">
+      <a href="health.html#form"><img src="img/hair-transplant.png" alt="Hair Transplant in Türkiye"></a>
+      <p>Hair transplant</p>
+    </div>
   </section>
 
   <!-- PARTNERS -->
