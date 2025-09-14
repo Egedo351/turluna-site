@@ -90,7 +90,17 @@ const translations = {
       messageLabel: "Message",
       formButton: "Send"
     },
-    footer: "© Turluna 2025 — All rights reserved."
+    footer: "© Turluna 2025 — All rights reserved.",
+    home: {
+      slider1: "Personalized, guided city tours",
+      slider2: "Professional support for corporate travel",
+      slider3: "Unique cruise experiences",
+      slider4: "Rent a car",
+      slider5: "Hair transplant",
+      slider6: "Your tickets for all attractions worldwide",
+      slider7: "Hotel reservations worldwide — from tropical beaches to snowy peaks",
+      collab: "We proudly collaborate with:"
+    }
   },
 
   tr: {
@@ -184,7 +194,17 @@ const translations = {
       messageLabel: "Mesaj",
       formButton: "Gönder"
     },
-    footer: "© Turluna 2025 — Tüm hakları saklıdır."
+    footer: "© Turluna 2025 — Tüm hakları saklıdır.",
+    home: {
+      slider1: "Kişiselleştirilmiş, rehberli şehir turları",
+      slider2: "Kurumsal seyahatler için profesyonel destek",
+      slider3: "Eşsiz cruise deneyimleri",
+      slider4: "Araç kiralama",
+      slider5: "Saç ekimi",
+      slider6: "Dünyadaki tüm müze ve eğlence alanları için biletleriniz",
+      slider7: "Tropikal plajlardan karlı zirvelere kadar dünya otellerinde rezervasyonlarınız",
+      collab: "Gururla işbirliği yaptığımız markalar:"
+    }
   },
 
   pt: {
@@ -278,7 +298,17 @@ const translations = {
       messageLabel: "Mensagem",
       formButton: "Enviar"
     },
-    footer: "© Turluna 2025 — Todos os direitos reservados."
+    footer: "© Turluna 2025 — Todos os direitos reservados.",
+    home: {
+      slider1: "Passeios guiados e personalizados pelas cidades",
+      slider2: "Apoio profissional para viagens corporativas",
+      slider3: "Experiências de cruzeiro únicas",
+      slider4: "Aluguel de carro",
+      slider5: "Transplante capilar",
+      slider6: "Seus ingressos para atrações em todo o mundo",
+      slider7: "Reservas de hotéis em todo o mundo — de praias tropicais a picos nevados",
+      collab: "Temos orgulho em colaborar com:"
+    }
   }
 };
 
