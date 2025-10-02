@@ -3,27 +3,31 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>About Us — Turluna</title>
+  <title data-i18n="about.title">About Us — Turluna</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .lang-switch.flags{display:flex;gap:8px;align-items:center;margin-left:auto}
+    .lang-btn{width:32px;height:32px;border-radius:50%;border:1px solid #dcdcdc;background-size:cover;background-position:center;background-repeat:no-repeat;cursor:pointer;transition:transform .08s,box-shadow .08s;padding:0}
+    .lang-btn:hover{transform:translateY(-1px)}
+    .lang-btn.active{box-shadow:0 0 0 2px #111 inset}
+    nav a.break{white-space:normal !important;display:inline-block;text-align:center;line-height:1.15;width:92px}
+    @media (max-width:900px){ nav a.break{width:auto} }
+    h1{color:#006666;font-family:"Georgia",serif}
+  </style>
 </head>
-<body class="page-about">
+<body>
 <header>
   <div class="container">
     <nav>
-      <!-- Logo: tüm sayfalarda aynı boy, home.html'e link -->
-      <a href="home.html" aria-label="Home">
-        <img src="logo.png.jpg" alt="Turluna logo" class="nav-logo">
-      </a>
-
-      <!-- Menü bağlantıları (diğer sayfalarla aynı sıra/etiket) -->
+      <a href="home.html">
+  <img src="logo.png.jpg" alt="Turluna logo" class="logo">
+</a>
       <a href="index.html" data-i18n="nav.about"></a>
       <a href="holidays.html" class="break" data-i18n="nav.holidays"></a>
       <a href="health.html" class="break" data-i18n="nav.health"></a>
       <a href="sport.html"  class="break" data-i18n="nav.sport"></a>
       <a href="gastronomy.html" data-i18n="nav.gastronomy"></a>
-      <a href="consultancy.html" data-i18n="nav.consultancy"></a>
-
-      <!-- Diller: tüm sayfalarda aynı görsel düğmeler -->
+      <a href="consultancy.html" class="active" data-i18n="nav.consultancy"></a>
       <div class="lang-switch flags">
         <button class="lang-btn" data-lang="en" onclick="egedoSetLang('en')" aria-label="English"   style="background-image:url('https://flagcdn.com/w40/gb.png');"></button>
         <button class="lang-btn" data-lang="tr" onclick="egedoSetLang('tr')" aria-label="Türkçe"    style="background-image:url('https://flagcdn.com/w40/tr.png');"></button>
@@ -36,35 +40,36 @@
 <main>
   <section class="section">
     <h1 data-i18n="about.title">About Us</h1>
-    <p data-i18n="about.intro">
-      Turluna Lda. is a Lisbon-based company founded by two Turkish entrepreneurs. With an innovative mindset, we work only with the best partners in every field we serve—keeping customer satisfaction consistently at the highest level. Our core lines of business are tourism, gastronomy, and consultancy.
-    </p>
+
+    <p data-i18n="about.intro"><strong>Turluna Lda.</strong> is a Lisbon-based company founded by two Turkish entrepreneurs. With an
+      innovative mindset, we work only with the best partners in every field we serve—keeping customer satisfaction
+      consistently at the highest level. Our core lines of business are <strong>tourism</strong>,
+      <strong>gastronomy</strong>, and <strong>consultancy</strong>.</p>
 
     <h2 data-i18n="about.tourismTitle">Tourism</h2>
-    <p data-i18n="about.tourismText">
-      Turluna delivers a true 360-degree travel service. From air tickets, hotel stays, car rental, and private transfers to event tickets and museum/gallery admissions, we curate seamless journeys end-to-end. You receive competitive rates, attentive support, and premium quality—so your trip feels effortless from the very first plan to the final day.
-    </p>
+    <p data-i18n="about.tourismText">Turluna delivers a true 360-degree travel service. From <strong>air tickets</strong>,
+      <strong>hotel stays</strong>, <strong>car rental</strong>, and <strong>private transfers</strong> to
+      <strong>event tickets</strong> and <strong>museum/gallery admissions</strong>, we curate seamless journeys
+      end-to-end. You receive competitive rates, attentive support, and premium quality—so your trip feels effortless
+      from the very first plan to the final day.</p>
 
-    <h2 data-i18n="about.healthTitle">Health &amp; Sports Tourism</h2>
-    <p data-i18n="about.healthText">
-      We also design packages in health and sports tourism.
-    </p>
+    <h3 data-i18n="about.healthsportTitle">Health &amp; Sports Tourism</h3>
+    <p data-i18n="about.healthsportText">We also design packages in <strong>health</strong> and <strong>sports</strong> tourism.</p>
 
     <h2 data-i18n="about.gastronomyTitle">Gastronomy</h2>
-    <p data-i18n="about.gastronomyText">
-      We proudly showcase the rich flavors of Turkish cuisine through pop-up events at unique venues in Lisbon. From traditional breakfasts to refined dinners, we bring authentic taste with modern touches.
-    </p>
+    <p data-i18n="about.gastronomyText">We proudly showcase the rich flavors of Turkish cuisine through pop-up events at unique venues in Lisbon.
+      From traditional breakfasts to refined dinners, we bring authentic taste with modern touches.</p>
 
     <h2 data-i18n="about.consultancyTitle">Consultancy</h2>
-    <p data-i18n="about.consultancyText">
-      We provide practical guidance on Portugal visas and company formation in Portugal. Whether you need help understanding the steps, preparing documents, or coordinating with local partners, our team can assist you from start to finish.
-    </p>
+    <p data-i18n="about.consultancyText">We provide practical guidance on Portugal visas and company formation in Portugal. Whether you need help
+      understanding the steps, preparing documents, or coordinating with local partners, our team can assist you
+      from start to finish.</p>
   </section>
 </main>
 
 <footer>
   <div class="container">
-    <small data-i18n="footer">© Turluna 2025. All rights reserved.</small>
+    <small data-i18n="footer">© Turluna 2025 — All rights reserved.</small>
   </div>
 </footer>
 
