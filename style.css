@@ -8,118 +8,79 @@ body {
   line-height: 1.6;
 }
 
-/* ===== Header / Navbar ===== */
+/* ===== Header (Eski renk/stil) ===== */
 header { background: #0e7a86; color: #fff; }
 .container { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
 
 nav {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  height: 80px;            /* TÜM SAYFALARDA AYNI */
-  padding: 0;
+  display: flex; align-items: center; gap: 16px;
+  padding: 12px 0;
 }
+.logo { height: 48px; width: auto; border-radius: 6px; background: #fff; }
 
-/* Navbar logosu – TÜM SAYFALARDA AYNI */
-.nav-logo {
-  height: 64px;            /* okunur, kare logoya uygun */
-  width: auto;
-  display: block;
-}
-
-/* Menü linkleri */
 nav a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
+  color: #fff; text-decoration: none; font-weight: 600;
 }
 nav a:hover { text-decoration: underline; }
 
-/* Dil düğmeleri – TÜM SAYFALARDA AYNI */
-.lang-switch.flags {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  margin-left: auto;       /* sağa it */
-}
-.lang-btn {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  border: 1px solid #dcdcdc;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  cursor: pointer;
-  transition: transform .08s, box-shadow .08s;
-  padding: 0;
-}
-.lang-btn:hover { transform: translateY(-1px); }
-.lang-btn.active { box-shadow: 0 0 0 2px #111 inset; }
-
-/* ===== Layout ===== */
 main { padding: 24px 0; }
 footer { background: #0e7a86; color: #fff; padding: 16px 0; margin-top: 40px; }
 footer small { opacity: .9; }
 
-/* ===== Hero image (varsa) ===== */
+/* ===== Hero image (tam görünsün, küçük kalsın) ===== */
 .hero { margin: 0 auto 20px; max-width: 1100px; padding: 0 0; }
 .hero-img{
   width: 100%;
-  height: auto;
-  max-height: 360px;
-  object-fit: contain;
+  height: auto;              /* oranı koru */
+  max-height: 360px;         /* KÜÇÜK tut */
+  object-fit: contain;       /* kırpma yok, tamamı görünür */
   object-position: center;
   display: block;
   border-radius: 12px;
-  background: #eef3f5;
+  background: #eef3f5;       /* üst-alt boşluk oluşursa hoş bir zemin */
 }
 
 /* ===== Sections ===== */
 .section { max-width: 1100px; margin: 24px auto; padding: 0 16px; }
 .section h1, .section h2 { margin: 0 0 12px; line-height: 1.25; }
 
-/* ===== About (index) – Watermark SADECE index’te ===== */
-.page-about main { position: relative; }
-.page-about main::after{
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 20px;
-  transform: translateX(-50%);
-  width: 720px;              /* daha büyük */
-  height: 720px;
-  background: url('logo.png.jpg') no-repeat center/contain;
-  opacity: .12;              /* daha belirgin */
-  pointer-events: none;
-  z-index: 0;
+/* ===== About watermark ===== */
+.about.watermark { position: relative; overflow: hidden; background:#fff; border-radius:12px; padding:20px; }
+.about.watermark::after{
+  content:""; position:absolute; inset:0;
+  background:url('logo.png.jpg') no-repeat center;
+  background-size: 240px auto;
+  opacity:.06; pointer-events:none;
 }
-/* Metin üstte kalsın */
-.page-about main .section,
-.page-about main > * { position: relative; z-index: 1; }
 
 /* ===== Responsive ===== */
-@media (max-width: 900px){
-  nav { gap: 16px; }
-}
 @media (max-width: 768px){
-  nav { flex-wrap: wrap; height: 64px; }
-  .nav-logo { height: 48px; }
-  .page-about main::after{
-    width: 400px;
-    height: 400px;
-    top: 10px;
-  }
+  nav { flex-wrap: wrap; }
+  .hero-img { max-height: 45vh; } /* mobilde ekrana göre ayarla */
 }
-
-/* Menü başlıklarını iki satıra kırmak için (varsa) */
+/* --- Long menu items: break into two lines --- */
 nav a.break{
-  white-space: normal;
+  white-space: normal;          /* tek satır zorlaması yok */
   display: inline-block;
   text-align: center;
   line-height: 1.15;
-  width: 92px;
+  width: 92px;                  /* dar alan -> 2 satıra kır */
 }
+
+/* dar ekranlarda genişlik kısıtını kaldır (menü sarmalansın) */
+@media (max-width: 900px){
+  nav a.break{ width: auto; }
+}
+/* --- Long menu items: break into two lines --- */
+nav a.break{
+  white-space: normal !important;     /* tek satır zorlaması varsa ez */
+  display: inline-block;
+  text-align: center;
+  line-height: 1.15;
+  width: 92px;                        /* dar alan -> 2 satıra kır */
+}
+
+/* dar ekranlarda genişlik kısıtını kaldır (menü sarmalansın) */
 @media (max-width: 900px){
   nav a.break{ width: auto; }
 }
