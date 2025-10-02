@@ -16,7 +16,13 @@ nav {
   display: flex; align-items: center; gap: 16px;
   padding: 12px 0;
 }
-.logo { height: 48px; width: auto; border-radius: 6px; background: #fff; }
+.logo { 
+  height: 100%;           /* logoyu menü yüksekliğine uydur */
+  width: auto; 
+  border-radius: 6px; 
+  background: #fff; 
+  display: block;         /* dikey hizalamayı düzeltir */
+}
 
 nav a {
   color: #fff; text-decoration: none; font-weight: 600;
@@ -84,4 +90,3 @@ nav a.break{
 @media (max-width: 900px){
   nav a.break{ width: auto; }
 }
-
