@@ -16,16 +16,13 @@ nav {
   display: flex;
   align-items: center;
   gap: 16px;
-  height: 96px;       /* navbar yüksekliği, logoya yer açar */
+  height: 72px;        /* navbar yüksekliği */
   padding: 0;
 }
 
-.nav-logo {
-  height: 80px;       /* LOGO sabit yüksekliği */
-  width: auto;
-  display: block;
-}
+/* Artık navbar’da logo yok; .nav-logo KULLANILMIYOR */
 
+/* Eğer başka yerlerde küçük logo görseli kullanırsan */
 .logo {
   height: 48px;
   width: auto;
@@ -58,13 +55,37 @@ footer small { opacity: .9; }
 .section { max-width: 1100px; margin: 24px auto; padding: 0 16px; }
 .section h1, .section h2 { margin: 0 0 12px; line-height: 1.25; }
 
+/* ===== About (index) – Watermark ===== */
+/* Sadece index.html’de (body class: page-about) çalışır */
+.page-about main { position: relative; }
+.page-about main::after{
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 40px;                   /* başlıktan biraz aşağı */
+  transform: translateX(-50%);
+  width: 520px;                /* watermark genişliği */
+  height: 520px;               /* watermark yüksekliği */
+  background: url('logo.png.jpg') no-repeat center/contain;
+  opacity: .06;                /* antet kağıdı gibi */
+  pointer-events: none;
+  z-index: 0;
+}
+/* Metnin üstte kalması için */
+.page-about main .section { position: relative; z-index: 1; }
+
 /* ===== Responsive ===== */
 @media (max-width: 768px){
-  nav { flex-wrap: wrap; height: 72px; }
-  .nav-logo { height: 60px; }
+  nav { flex-wrap: wrap; height: 64px; }
   .hero-img { max-height: 45vh; }
+  .page-about main::after{
+    width: 360px;
+    height: 360px;
+    top: 24px;
+  }
 }
 
+/* --- Long menu items: break into two lines --- */
 nav a.break{
   white-space: normal;
   display: inline-block;
