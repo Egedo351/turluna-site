@@ -16,7 +16,7 @@ nav {
   display: flex;
   align-items: center;
   gap: 16px;
-  height: 72px;        /* 64px → 72px yapıldı, logo biraz büyür */
+  height: 72px;        /* NAV yüksekliği sabit */
   padding: 0;          /* dikey boşluğu logoya bırakma */
 }
 
@@ -74,7 +74,7 @@ footer small { opacity: .9; }
 
 /* ===== Responsive ===== */
 @media (max-width: 768px){
-  nav { flex-wrap: wrap; height: 64px; }  /* mobilde nav biraz daha alçak */
+  nav { flex-wrap: wrap; height: 56px; }  /* mobilde nav biraz alçalsın */
   .hero-img { max-height: 45vh; }
 }
 
