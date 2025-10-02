@@ -10,12 +10,12 @@
 <header>
   <div class="container">
     <nav>
-      <!-- Sol üstte küçük logo (home.html'e gider) -->
+      <!-- Logo: tüm sayfalarda aynı boy, home.html'e link -->
       <a href="home.html" aria-label="Home">
         <img src="logo.png.jpg" alt="Turluna logo" class="nav-logo">
       </a>
 
-      <!-- Menü bağlantıları -->
+      <!-- Menü bağlantıları (diğer sayfalarla aynı sıra/etiket) -->
       <a href="index.html" data-i18n="nav.about"></a>
       <a href="holidays.html" class="break" data-i18n="nav.holidays"></a>
       <a href="health.html" class="break" data-i18n="nav.health"></a>
@@ -23,8 +23,8 @@
       <a href="gastronomy.html" data-i18n="nav.gastronomy"></a>
       <a href="consultancy.html" data-i18n="nav.consultancy"></a>
 
-      <!-- Dil seçimleri -->
-      <div class="lang-switch flags" style="margin-left:auto;">
+      <!-- Diller: tüm sayfalarda aynı görsel düğmeler -->
+      <div class="lang-switch flags">
         <button class="lang-btn" data-lang="en" onclick="egedoSetLang('en')" aria-label="English"   style="background-image:url('https://flagcdn.com/w40/gb.png');"></button>
         <button class="lang-btn" data-lang="tr" onclick="egedoSetLang('tr')" aria-label="Türkçe"    style="background-image:url('https://flagcdn.com/w40/tr.png');"></button>
         <button class="lang-btn" data-lang="pt" onclick="egedoSetLang('pt')" aria-label="Português" style="background-image:url('https://flagcdn.com/w40/pt.png');"></button>
