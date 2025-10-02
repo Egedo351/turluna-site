@@ -16,13 +16,18 @@ nav {
   display: flex;
   align-items: center;
   gap: 16px;
-  height: 72px;        /* navbar yüksekliği */
+  height: 80px;        /* biraz daha yüksek */
   padding: 0;
 }
 
-/* Artık navbar’da logo yok; .nav-logo KULLANILMIYOR */
+/* Navbar logosu */
+.nav-logo {
+  height: 64px;        /* küçük ama net */
+  width: auto;
+  display: block;
+}
 
-/* Eğer başka yerlerde küçük logo görseli kullanırsan */
+/* Diğer durumlarda kullanılan küçük logo */
 .logo {
   height: 48px;
   width: auto;
@@ -56,18 +61,17 @@ footer small { opacity: .9; }
 .section h1, .section h2 { margin: 0 0 12px; line-height: 1.25; }
 
 /* ===== About (index) – Watermark ===== */
-/* Sadece index.html’de (body class: page-about) çalışır */
 .page-about main { position: relative; }
 .page-about main::after{
   content: "";
   position: absolute;
   left: 50%;
-  top: 40px;                   /* başlıktan biraz aşağı */
+  top: 20px;
   transform: translateX(-50%);
-  width: 520px;                /* watermark genişliği */
-  height: 520px;               /* watermark yüksekliği */
+  width: 720px;                /* büyüttük */
+  height: 720px;
   background: url('logo.png.jpg') no-repeat center/contain;
-  opacity: .06;                /* antet kağıdı gibi */
+  opacity: .12;                /* daha belirgin */
   pointer-events: none;
   z-index: 0;
 }
@@ -77,15 +81,15 @@ footer small { opacity: .9; }
 /* ===== Responsive ===== */
 @media (max-width: 768px){
   nav { flex-wrap: wrap; height: 64px; }
+  .nav-logo { height: 48px; }
   .hero-img { max-height: 45vh; }
   .page-about main::after{
-    width: 360px;
-    height: 360px;
-    top: 24px;
+    width: 400px;
+    height: 400px;
+    top: 10px;
   }
 }
 
-/* --- Long menu items: break into two lines --- */
 nav a.break{
   white-space: normal;
   display: inline-block;
