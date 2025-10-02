@@ -13,15 +13,28 @@ header { background: #0e7a86; color: #fff; }
 .container { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
 
 nav {
-  display: flex; align-items: center; gap: 16px;
-  padding: 12px 0;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: 64px;        /* NAV yüksekliği sabit */
+  padding: 0;          /* dikey boşluğu logoya bırakma */
 }
-.logo { 
-  height: 100%;           /* logoyu menü yüksekliğine uydur */
-  width: auto; 
-  border-radius: 6px; 
-  background: #fff; 
-  display: block;         /* dikey hizalamayı düzeltir */
+
+/* SADECE NAVBARDaki logo için */
+.nav-logo {
+  height: 100%;        /* nav yüksekliğini tamamen doldurur */
+  width: auto;
+  border-radius: 6px;
+  background: #fff;
+  display: block;
+}
+
+/* Diğer yerlerde kullandığın küçük logo varsa eski davranışını korusun */
+.logo {
+  height: 48px;
+  width: auto;
+  border-radius: 6px;
+  background: #fff;
 }
 
 nav a {
@@ -61,32 +74,22 @@ footer small { opacity: .9; }
 
 /* ===== Responsive ===== */
 @media (max-width: 768px){
-  nav { flex-wrap: wrap; }
-  .hero-img { max-height: 45vh; } /* mobilde ekrana göre ayarla */
+  nav { flex-wrap: wrap; height: 56px; }  /* mobilde nav biraz alçalsın */
+  .hero-img { max-height: 45vh; }
 }
+
 /* --- Long menu items: break into two lines --- */
 nav a.break{
-  white-space: normal;          /* tek satır zorlaması yok */
+  white-space: normal;
   display: inline-block;
   text-align: center;
   line-height: 1.15;
-  width: 92px;                  /* dar alan -> 2 satıra kır */
+  width: 92px;
 }
 
 /* dar ekranlarda genişlik kısıtını kaldır (menü sarmalansın) */
 @media (max-width: 900px){
   nav a.break{ width: auto; }
 }
-/* --- Long menu items: break into two lines --- */
-nav a.break{
-  white-space: normal !important;     /* tek satır zorlaması varsa ez */
-  display: inline-block;
-  text-align: center;
-  line-height: 1.15;
-  width: 92px;                        /* dar alan -> 2 satıra kır */
-}
 
-/* dar ekranlarda genişlik kısıtını kaldır (menü sarmalansın) */
-@media (max-width: 900px){
-  nav a.break{ width: auto; }
-}
+/* --- (tekrarlı kuralı tekilleştirdim; aynı davranış) --- */
