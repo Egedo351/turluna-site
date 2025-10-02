@@ -22,12 +22,12 @@ nav {
 
 /* Navbar logosu */
 .nav-logo {
-  height: 64px;        /* küçük ama net */
+  height: 64px;        /* okunur boy */
   width: auto;
   display: block;
 }
 
-/* Diğer durumlarda kullanılan küçük logo */
+/* Başka yerlerde küçük logo kullanırsan */
 .logo {
   height: 48px;
   width: auto;
@@ -60,7 +60,7 @@ footer small { opacity: .9; }
 .section { max-width: 1100px; margin: 24px auto; padding: 0 16px; }
 .section h1, .section h2 { margin: 0 0 12px; line-height: 1.25; }
 
-/* ===== About (index) – Watermark ===== */
+/* ===== About (index) – Watermark yalnızca index’te ===== */
 .page-about main { position: relative; }
 .page-about main::after{
   content: "";
@@ -68,15 +68,16 @@ footer small { opacity: .9; }
   left: 50%;
   top: 20px;
   transform: translateX(-50%);
-  width: 720px;                /* büyüttük */
+  width: 720px;                /* büyütüldü */
   height: 720px;
   background: url('logo.png.jpg') no-repeat center/contain;
   opacity: .12;                /* daha belirgin */
   pointer-events: none;
   z-index: 0;
 }
-/* Metnin üstte kalması için */
-.page-about main .section { position: relative; z-index: 1; }
+/* Metin üstte kalsın */
+.page-about main .section,
+.page-about main > * { position: relative; z-index: 1; }
 
 /* ===== Responsive ===== */
 @media (max-width: 768px){
@@ -90,6 +91,7 @@ footer small { opacity: .9; }
   }
 }
 
+/* Menü başlıklarını iki satıra kırmak için */
 nav a.break{
   white-space: normal;
   display: inline-block;
@@ -97,7 +99,6 @@ nav a.break{
   line-height: 1.15;
   width: 92px;
 }
-
 @media (max-width: 900px){
   nav a.break{ width: auto; }
 }
