@@ -8,7 +8,7 @@ body {
   line-height: 1.6;
 }
 
-/* ===== Header (Eski renk/stil) ===== */
+/* ===== Header ===== */
 header { background: #0e7a86; color: #fff; }
 .container { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
 
@@ -16,25 +16,20 @@ nav {
   display: flex;
   align-items: center;
   gap: 16px;
-  height: 72px;        /* NAV yüksekliği sabit */
-  padding: 0;          /* dikey boşluğu logoya bırakma */
+  height: 96px;       /* navbar yüksekliği, logoya yer açar */
+  padding: 0;
 }
 
-/* SADECE NAVBARDaki logo için */
 .nav-logo {
-  height: 100%;        /* nav yüksekliğini tamamen doldurur */
+  height: 80px;       /* LOGO sabit yüksekliği */
   width: auto;
-  border-radius: 6px;
-  background: #fff;
   display: block;
 }
 
-/* Diğer yerlerde kullandığın küçük logo varsa eski davranışını korusun */
 .logo {
   height: 48px;
   width: auto;
-  border-radius: 6px;
-  background: #fff;
+  display: inline-block;
 }
 
 nav a {
@@ -46,39 +41,30 @@ main { padding: 24px 0; }
 footer { background: #0e7a86; color: #fff; padding: 16px 0; margin-top: 40px; }
 footer small { opacity: .9; }
 
-/* ===== Hero image (tam görünsün, küçük kalsın) ===== */
+/* ===== Hero image ===== */
 .hero { margin: 0 auto 20px; max-width: 1100px; padding: 0 0; }
 .hero-img{
   width: 100%;
-  height: auto;              /* oranı koru */
-  max-height: 360px;         /* KÜÇÜK tut */
-  object-fit: contain;       /* kırpma yok, tamamı görünür */
+  height: auto;
+  max-height: 360px;
+  object-fit: contain;
   object-position: center;
   display: block;
   border-radius: 12px;
-  background: #eef3f5;       /* üst-alt boşluk oluşursa hoş bir zemin */
+  background: #eef3f5;
 }
 
 /* ===== Sections ===== */
 .section { max-width: 1100px; margin: 24px auto; padding: 0 16px; }
 .section h1, .section h2 { margin: 0 0 12px; line-height: 1.25; }
 
-/* ===== About watermark ===== */
-.about.watermark { position: relative; overflow: hidden; background:#fff; border-radius:12px; padding:20px; }
-.about.watermark::after{
-  content:""; position:absolute; inset:0;
-  background:url('logo.png.jpg') no-repeat center;
-  background-size: 240px auto;
-  opacity:.06; pointer-events:none;
-}
-
 /* ===== Responsive ===== */
 @media (max-width: 768px){
-  nav { flex-wrap: wrap; height: 56px; }  /* mobilde nav biraz alçalsın */
+  nav { flex-wrap: wrap; height: 72px; }
+  .nav-logo { height: 60px; }
   .hero-img { max-height: 45vh; }
 }
 
-/* --- Long menu items: break into two lines --- */
 nav a.break{
   white-space: normal;
   display: inline-block;
@@ -87,9 +73,6 @@ nav a.break{
   width: 92px;
 }
 
-/* dar ekranlarda genişlik kısıtını kaldır (menü sarmalansın) */
 @media (max-width: 900px){
   nav a.break{ width: auto; }
 }
-
-/* --- (tekrarlı kuralı tekilleştirdim; aynı davranış) --- */
