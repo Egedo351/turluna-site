@@ -97,3 +97,21 @@ main.watermarked::after {
   pointer-events: none;
   z-index: 0;
 }
+/* footer row + instagram */
+.footer-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+.ig{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  color:#fff;
+  text-decoration:none;
+  opacity:.95;
+}
+.ig:hover{ opacity:1; text-decoration:underline; }
+.ig-icon{ width:16px; height:16px; fill:#fff; display:block; }
+
