@@ -14,7 +14,7 @@ const translations = {
       tourismTitle: "Tourism",
       tourismText: "Turluna delivers a true 360-degree travel service. From air tickets, hotel stays, car rental, and private transfers to event tickets and museum/gallery admissions, we curate seamless journeys end-to-end. You receive competitive rates, attentive support, and premium quality—so your trip feels effortless from the very first plan to the final day.",
       healthsportTitle: "Health & Sports Tourism",
-      healthsportText: "We also design packages in health and sports tourism.",
+      healthsportText: "We offer health tourism services focused on physiotherapy, oral and dental health, and hair transplantation. Each service is delivered in collaboration with experienced professionals to ensure quality and reliability. In sports tourism, we create opportunities for training camps, participation in international events, and unique experiences for both amateur and professional athletes. Whether the purpose is recovery, wellness, or performance, we make sure your trip is smooth and fulfilling.",
       gastronomyTitle: "Gastronomy",
       gastronomyText: "We proudly showcase the rich flavors of Turkish cuisine through pop-up events at unique venues in Lisbon. From traditional breakfasts to refined dinners, we bring authentic taste with modern touches.",
       consultancyTitle: "Consultancy",
@@ -119,7 +119,7 @@ const translations = {
       tourismTitle: "Turizm",
       tourismText: "Turluna, gerçek anlamda 360 derece seyahat hizmeti sunar. Uçak biletleri, otel konaklamaları, araç kiralama ve özel transferlerden etkinlik biletleri ve müze/galeri girişlerine kadar uçtan uca kusursuz bir seyahat planlıyoruz. Rekabetçi fiyatlar, özenli destek ve yüksek kaliteyle seyahatiniz ilk plandan son güne kadar zahmetsiz geçer.",
       healthsportTitle: "Sağlık & Spor Turizmi",
-      healthsportText: "Sağlık ve spor turizmi paketleri de tasarlıyoruz.",
+      healthsportText: "Sağlık turizminde fizyoterapi, ağız ve diş sağlığı ve saç ekimi hizmetleri sunuyoruz. Tüm bu hizmetler, deneyimli uzmanlarla iş birliği içinde yürütülerek kalite ve güvence sağlanır. Spor turizminde ise antrenman kampları, uluslararası etkinliklere katılım ve hem amatör hem de profesyonel sporcular için özel deneyimler sunuyoruz. Amacınız ister iyileşme, ister wellness, ister performans olsun, seyahatinizin sorunsuz ve verimli geçmesini sağlıyoruz.",
       gastronomyTitle: "Gastronomi",
       gastronomyText: "Türk mutfağının zengin lezzetlerini Lizbon’daki özel mekânlarda düzenlediğimiz pop-up etkinliklerle gururla sunuyoruz. Geleneksel kahvaltılardan seçkin akşam yemeklerine kadar, otantik tatları modern dokunuşlarla buluşturuyoruz.",
       consultancyTitle: "Danışmanlık",
@@ -223,8 +223,8 @@ const translations = {
       intro: "A Turluna Lda. é uma empresa sediada em Lisboa fundada por dois empreendedores turcos. Com uma mentalidade inovadora, trabalhamos apenas com os melhores parceiros em cada área em que atuamos—mantendo a satisfação do cliente sempre no mais alto nível. Nossas principais áreas de negócio são turismo, gastronomia e consultoria.",
       tourismTitle: "Turismo",
       tourismText: "A Turluna oferece um verdadeiro serviço de viagem 360 graus. De passagens aéreas, estadias em hotéis, aluguel de carros e transfers privados a ingressos para eventos e entradas em museus/galerias, planejamos jornadas completas de ponta a ponta. Você recebe preços competitivos, suporte dedicado e qualidade premium—para que sua viagem seja tranquila do início ao fim.",
-      healthsportTitle: "Turismo de Saúde & Esporte",
-      healthsportText: "Também desenvolvemos pacotes em turismo de saúde e esportivo.",
+      healthsportTitle: "Turismo de Saúde & Desporto",
+      healthsportText: "Oferecemos serviços de turismo de saúde com foco em fisioterapia, saúde oral e dentária e transplante capilar. Todos estes serviços são realizados em colaboração com profissionais experientes, garantindo qualidade e confiança. No turismo desportivo, criamos oportunidades para estágios de treino, participação em eventos internacionais e experiências únicas para atletas amadores e profissionais. Quer o objetivo seja recuperação, bem-estar ou desempenho, asseguramos que a sua viagem decorra de forma tranquila e enriquecedora.",
       gastronomyTitle: "Gastronomia",
       gastronomyText: "Orgulhamo-nos de apresentar os ricos sabores da culinária turca através de eventos pop-up em locais únicos de Lisboa. De cafés da manhã tradicionais a jantares refinados, trazemos sabor autêntico com toques modernos.",
       consultancyTitle: "Consultoria",
@@ -315,18 +315,21 @@ const translations = {
   }
 };
 
-function egedoSetLang(lang) {
+function turlunaSetLang(lang) {
   if (!translations[lang]) return;
   document.querySelectorAll("[data-i18n]").forEach(el => {
     const keys = el.getAttribute("data-i18n").split(".");
     let text = translations[lang];
     keys.forEach(k => text = text?.[k]);
-    if (text) el.textContent = text;
+    if (text != null) el.textContent = text;
   });
   localStorage.setItem("lang", lang);
 }
 
+/* Geri uyumluluk: HTML'de egedoSetLang çağrıları varsa bozulmasın */
+const egedoSetLang = turlunaSetLang;
+
 document.addEventListener("DOMContentLoaded", () => {
   const lang = localStorage.getItem("lang") || "en";
-  egedoSetLang(lang);
+  turlunaSetLang(lang);
 });
