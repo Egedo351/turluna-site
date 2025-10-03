@@ -6,7 +6,7 @@ const translations = {
       health: "Health Tourism",
       sport: "Sport Tourism",
       gastronomy: "Gastronomy",
-      consultancy: "Consultancy"
+      consultancy: "Corporate Services & Consultancy"
     },
     about: {
       title: "About Us",
@@ -18,7 +18,10 @@ const translations = {
       gastronomyTitle: "Gastronomy",
       gastronomyText: "We proudly showcase the rich flavors of Turkish cuisine through pop-up events at unique venues in Lisbon. From traditional breakfasts to refined dinners, we bring authentic taste with modern touches.",
       consultancyTitle: "Consultancy",
-      consultancyText: "We provide practical guidance on Portugal visas and company formation in Portugal. Whether you need help understanding the steps, preparing documents, or coordinating with local partners, our team can assist you from start to finish."
+      consultancyText: "We provide practical guidance on Portugal visas and company formation in Portugal. Whether you need help understanding the steps, preparing documents, or coordinating with local partners, our team can assist you from start to finish.",
+      /* NEW: Corporate block for About page */
+      corporateTitle: "Corporate Services & Consultancy",
+      corporateText: "We organize business and bleisure trips for companies with fast, reliable execution. Flights, hotel bookings, private transfers, and on-site coordination are managed end-to-end. You get a dedicated contact, clear itineraries, consolidated invoicing, and 24/7 support—so your team travels efficiently and on schedule.\n\nWe also provide practical guidance on Portugal visas and company formation in Portugal. Whether you need help understanding the steps, preparing documents, or coordinating with local partners, our team can assist you from start to finish."
     },
     holidays: {
       title: "Travels & Holidays",
@@ -111,7 +114,7 @@ const translations = {
       health: "Sağlık Turizmi",
       sport: "Spor Turizmi",
       gastronomy: "Gastronomi",
-      consultancy: "Danışmanlık"
+      consultancy: "Kurumsal Hizmetlerimiz & Danışmanlık"
     },
     about: {
       title: "Hakkımızda",
@@ -123,7 +126,10 @@ const translations = {
       gastronomyTitle: "Gastronomi",
       gastronomyText: "Türk mutfağının zengin lezzetlerini Lizbon’daki özel mekânlarda düzenlediğimiz pop-up etkinliklerle gururla sunuyoruz. Geleneksel kahvaltılardan seçkin akşam yemeklerine kadar, otantik tatları modern dokunuşlarla buluşturuyoruz.",
       consultancyTitle: "Danışmanlık",
-      consultancyText: "Portekiz vizeleri ve şirket kuruluşu konularında pratik rehberlik sağlıyoruz. İster adımları anlamak, ister belgeleri hazırlamak ya da yerel iş ortaklarıyla iletişimi koordine etmek olsun, ekibimiz baştan sona size yardımcı olur."
+      consultancyText: "Portekiz vizeleri ve şirket kuruluşu konularında pratik rehberlik sağlıyoruz. İster adımları anlamak, ister belgeleri hazırlamak ya da yerel iş ortaklarıyla iletişimi koordine etmek olsun, ekibimiz baştan sona size yardımcı olur.",
+      /* YENİ: About sayfası kurumsal blok */
+      corporateTitle: "Kurumsal Hizmetlerimiz & Danışmanlık",
+      corporateText: "Şirketler için iş ve “bleisure” seyahatlerini hızlı ve güvenilir şekilde planlıyoruz. Uçuş, konaklama, özel transfer ve sahadaki koordinasyonu uçtan uca yönetiyoruz. Tek yetkili iletişim, net programlar, konsolide faturalama ve 7/24 destek ile ekibiniz verimli ve zamanında seyahat eder.\n\nAyrıca Portekiz vizeleri ve şirket kuruluşu konularında pratik rehberlik sağlıyoruz. İster adımları anlamak, ister belgeleri hazırlamak ya da yerel iş ortaklarıyla iletişimi koordine etmek olsun, ekibimiz baştan sona size yardımcı olur."
     },
     holidays: {
       title: "Seyahat ve Tatiller",
@@ -216,7 +222,7 @@ const translations = {
       health: "Turismo de Saúde",
       sport: "Turismo Esportivo",
       gastronomy: "Gastronomia",
-      consultancy: "Consultoria"
+      consultancy: "Serviços Corporativos & Consultoria"
     },
     about: {
       title: "Sobre Nós",
@@ -228,7 +234,10 @@ const translations = {
       gastronomyTitle: "Gastronomia",
       gastronomyText: "Orgulhamo-nos de apresentar os ricos sabores da culinária turca através de eventos pop-up em locais únicos de Lisboa. De cafés da manhã tradicionais a jantares refinados, trazemos sabor autêntico com toques modernos.",
       consultancyTitle: "Consultoria",
-      consultancyText: "Fornecemos orientação prática sobre vistos de Portugal e constituição de empresas em Portugal. Quer precise de ajuda para compreender os passos, preparar documentos ou coordenar com parceiros locais, nossa equipe pode auxiliá-lo do início ao fim."
+      consultancyText: "Fornecemos orientação prática sobre vistos de Portugal e constituição de empresas em Portugal. Quer precise de ajuda para compreender os passos, preparar documentos ou coordenar com parceiros locais, nossa equipe pode auxiliá-lo do início ao fim.",
+      /* NOVO: bloco corporativo para a página About */
+      corporateTitle: "Serviços Corporativos & Consultoria",
+      corporateText: "Organizamos viagens de negócios e bleisure para empresas com execução rápida e confiável. Voos, hospedagem, transfers privados e coordenação local são geridos de ponta a ponta. Terá um ponto de contacto dedicado, roteiros claros, faturação consolidada e apoio 24/7—para que a sua equipa viaje com eficiência e pontualidade.\n\nTambém fornecemos orientação prática sobre vistos de Portugal e constituição de empresas em Portugal. Quer precise de ajuda para compreender os passos, preparar documentos ou coordenar com parceiros locais, nossa equipe pode auxiliá-lo do início ao fim."
     },
     holidays: {
       title: "Viagens & Férias",
