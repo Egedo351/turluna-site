@@ -3,8 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>About Us — Turluna</title>
+  <title data-i18n="about.title">About Us — Turluna</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .lang-switch.flags{display:flex;gap:8px;align-items:center;margin-left:auto}
+    .lang-btn{width:32px;height:32px;border-radius:50%;border:1px solid #dcdcdc;background-size:cover;background-position:center;background-repeat:no-repeat;cursor:pointer;transition:transform .08s,box-shadow .08s;padding:0}
+    .lang-btn:hover{transform:translateY(-1px)}
+    .lang-btn.active{box-shadow:0 0 0 2px #111 inset}
+    nav a.break{white-space:normal !important;display:inline-block;text-align:center;line-height:1.15;width:92px}
+    @media (max-width:900px){ nav a.break{width:auto} }
+    h1{color:#006666;font-family:"Georgia",serif}
+  </style>
 </head>
 <body>
 <header>
@@ -13,13 +22,12 @@
       <a href="index.html">
         <img src="logo.png.jpg" alt="Turluna logo" class="logo">
       </a>
-      <a href="about.html" class="active" data-i18n="nav.about"></a>
+      <a href="about.html" data-i18n="nav.about"></a>
       <a href="holidays.html" class="break" data-i18n="nav.holidays"></a>
       <a href="health.html" class="break" data-i18n="nav.health"></a>
       <a href="sport.html"  class="break" data-i18n="nav.sport"></a>
       <a href="gastronomy.html" data-i18n="nav.gastronomy"></a>
-      <a href="consultancy.html" data-i18n="nav.consultancy"></a>
-
+      <a href="consultancy.html" class="active" data-i18n="nav.consultancy"></a>
       <div class="lang-switch flags">
         <button class="lang-btn" data-lang="en" onclick="egedoSetLang('en')" aria-label="English"   style="background-image:url('https://flagcdn.com/w40/gb.png');"></button>
         <button class="lang-btn" data-lang="tr" onclick="egedoSetLang('tr')" aria-label="Türkçe"    style="background-image:url('https://flagcdn.com/w40/tr.png');"></button>
