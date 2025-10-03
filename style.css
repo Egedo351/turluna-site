@@ -93,7 +93,7 @@ main.watermarked::after {
   width: 720px;
   height: 720px;
   background: url('logo.png.jpg') no-repeat center/contain;
-  opacity: 0.17;
+  opacity: 0.2;
   pointer-events: none;
   z-index: 0;
 }
