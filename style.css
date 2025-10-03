@@ -1,86 +1,116 @@
-/* ===== Base ===== */
-* { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; }
+/* Genel gövde ayarları */
 body {
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  color: #0b1d23;
-  background: #f8fbfc;
-  line-height: 1.6;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #333;
+  background: #fff;
+  position: relative;
 }
 
-/* ===== Header (Eski renk/stil) ===== */
-header { background: #0e7a86; color: #fff; }
-.container { max-width: 1100px; margin: 0 auto; padding: 0 16px; }
-
-nav {
-  display: flex; align-items: center; gap: 16px;
-  padding: 12px 0;
+/* --- WATERMARK LOGO --- */
+body::before {
+  content: "";
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;                /* büyüklüğü ayarlayabilirsin */
+  height: 500px;
+  background: url('logo.png.jpg') no-repeat center center;
+  background-size: contain;
+  opacity: 0.07;               /* görünürlük (0.05 çok silik, 0.15 daha belirgin) */
+  z-index: -1;                 /* tüm içeriklerin arkasında kalsın */
+  pointer-events: none;        /* tıklamalara engel olmasın */
 }
-.logo { height: 48px; width: auto; border-radius: 6px; background: #fff; }
 
-nav a {
-  color: #fff; text-decoration: none; font-weight: 600;
+/* Slider */
+.slider {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 20px;
 }
-nav a:hover { text-decoration: underline; }
-
-main { padding: 24px 0; }
-footer { background: #0e7a86; color: #fff; padding: 16px 0; margin-top: 40px; }
-footer small { opacity: .9; }
-
-/* ===== Hero image (tam görünsün, küçük kalsın) ===== */
-.hero { margin: 0 auto 20px; max-width: 1100px; padding: 0 0; }
-.hero-img{
+.slide {
+  flex: 0 0 auto;
+  text-align: center;
+  width: 400px;
+  scroll-snap-align: center;
+}
+.slide img {
   width: 100%;
-  height: auto;              /* oranı koru */
-  max-height: 360px;         /* KÜÇÜK tut */
-  object-fit: contain;       /* kırpma yok, tamamı görünür */
-  object-position: center;
-  display: block;
+  height: 260px;
   border-radius: 12px;
-  background: #eef3f5;       /* üst-alt boşluk oluşursa hoş bir zemin */
+  object-fit: cover;
+  cursor: pointer;
+}
+.slide p {
+  margin-top: 10px;
+  font-size: 15px;
+  color: #333;
+  font-weight: 500;
+}
+.slider::-webkit-scrollbar {
+  height: 10px;
 }
 
-/* ===== Sections ===== */
-.section { max-width: 1100px; margin: 24px auto; padding: 0 16px; }
-.section h1, .section h2 { margin: 0 0 12px; line-height: 1.25; }
-
-/* ===== About watermark ===== */
-.about.watermark { position: relative; overflow: hidden; background:#fff; border-radius:12px; padding:20px; }
-.about.watermark::after{
-  content:""; position:absolute; inset:0;
-  background:url('logo.png.jpg') no-repeat center;
-  background-size: 240px auto;
-  opacity:.06; pointer-events:none;
+/* Partners */
+.partners {
+  text-align: center;
+  padding: 40px 20px;
+  background: #f9f9f9;
+}
+.partners h3 {
+  margin-bottom: 20px;
+  color: #333;
+}
+.partner-logos {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.partner-logos img {
+  height: 50px;
+  object-fit: contain;
 }
 
-/* ===== Responsive ===== */
-@media (max-width: 768px){
-  nav { flex-wrap: wrap; }
-  .hero-img { max-height: 45vh; } /* mobilde ekrana göre ayarla */
+/* Dil butonları */
+.lang-switch.flags {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-left: auto;
 }
-/* --- Long menu items: break into two lines --- */
-nav a.break{
-  white-space: normal;          /* tek satır zorlaması yok */
+.lang-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #dcdcdc;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  transition: transform .08s, box-shadow .08s;
+  padding: 0;
+}
+.lang-btn:hover {
+  transform: translateY(-1px);
+}
+.lang-btn.active {
+  box-shadow: 0 0 0 2px #111 inset;
+}
+
+/* Menü kırılma ayarı */
+nav a.break {
+  white-space: normal !important;
   display: inline-block;
   text-align: center;
   line-height: 1.15;
-  width: 92px;                  /* dar alan -> 2 satıra kır */
+  width: 92px;
 }
-
-/* dar ekranlarda genişlik kısıtını kaldır (menü sarmalansın) */
-@media (max-width: 900px){
-  nav a.break{ width: auto; }
-}
-/* --- Long menu items: break into two lines --- */
-nav a.break{
-  white-space: normal !important;     /* tek satır zorlaması varsa ez */
-  display: inline-block;
-  text-align: center;
-  line-height: 1.15;
-  width: 92px;                        /* dar alan -> 2 satıra kır */
-}
-
-/* dar ekranlarda genişlik kısıtını kaldır (menü sarmalansın) */
-@media (max-width: 900px){
-  nav a.break{ width: auto; }
+@media (max-width:900px) {
+  nav a.break {
+    width: auto;
+  }
 }
